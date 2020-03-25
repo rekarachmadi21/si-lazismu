@@ -5,15 +5,10 @@ class Home extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('templates/auth_header');
-        $this->load->view('auth/login');
-        $this->load->view('templates/auth_footer');
+        $this->load->view('home/home');
     }
 
     public function lupa_akun()
     {
-        $this->load->view('templates/auth_header');
-        $this->load->view('auth/lupa_akun');
-        $this->load->view('templates/auth_footer');
     }
 }
