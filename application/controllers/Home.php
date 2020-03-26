@@ -8,7 +8,8 @@ class Home extends CI_Controller
         $this->load->view('home/home');
     }
 
-    public function lupa_akun()
+    public function pemasukan()
     {
+        $this->load->view('home/pemasukan');
     }
 }
