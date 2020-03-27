@@ -1,33 +1,26 @@
 <!-- /.login-logo -->
 <div class="card">
     <div class="card-body login-card-body">
-        <form action="../../index3.html" method="post">
-            <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Username  ">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
-                    </div>
-                </div>
+        <?= $this->session->flashdata('message') ?>
+        <form action="<?= base_url('') ?>auth" method="post">
+            <div class="form-group">
+                <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+                <?= form_error('username', '<small class="text-danger pl-3">', '</small>') ?>
             </div>
-            <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Password">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
-                    </div>
-                </div>
+
+            <div class="form-grup">
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                <?= form_error('password', '<small class="text-danger pl-3">', '</small>') ?>
             </div>
-            <div class="row">
+            <div class="input-grup mb-3"></div>
+            <div class="input-grup mb-3 row">
                 <div class="col">
-                    <button type="submit" value="login" class="btn btn-primary btn-block">Login</button>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
                 </div>
                 <!-- /.col -->
             </div>
-
         </form>
-        <br>
-        <center> <a href="<?= base_url('') ?>auth/lupa_akun">Lupa Akun </center>
+        <center> <a href="<?= base_url('') ?>">Lupa Akun </center>
     </div>
     <!-- /.login-card-body -->
 </div>
