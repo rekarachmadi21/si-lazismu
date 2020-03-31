@@ -12,6 +12,7 @@
                 <input type="password" name="password" id="password" class="form-control" placeholder="Password">
                 <?= form_error('password', '<small class="text-danger pl-3">', '</small>') ?>
             </div>
+
             <div class="input-grup mb-3"></div>
             <div class="input-grup mb-3 row">
                 <div class="col">
