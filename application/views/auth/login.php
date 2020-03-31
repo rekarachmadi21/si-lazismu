@@ -4,7 +4,7 @@
         <?= $this->session->flashdata('message') ?>
         <form action="<?= base_url('') ?>auth" method="post">
             <div class="form-group">
-                <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+                <input type="text" name="email" id="email" class="form-control" placeholder="Email">
                 <?= form_error('username', '<small class="text-danger pl-3">', '</small>') ?>
             </div>
 
@@ -20,7 +20,7 @@
                 <!-- /.col -->
             </div>
         </form>
-        <center> <a href="<?= base_url('') ?>">Lupa Akun </center>
+        <center> <a href="<?= base_url('') ?>auth/lupa_akun">Lupa Akun </center>
     </div>
     <!-- /.login-card-body -->
 </div>
