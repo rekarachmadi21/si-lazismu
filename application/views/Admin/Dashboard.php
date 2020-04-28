@@ -69,7 +69,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="<?php base_url('') ?>" class="nav-link active">
+                            <a href="<?= base_url('') ?>" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -78,7 +78,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?php base_url('') ?>" class="nav-link">
+                            <a href="<?= base_url('') ?>home/pemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-pencil"></i>
                                 <p>
                                     Pemasukan
@@ -87,7 +87,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?php base_url('') ?>" class="nav-link">
+                            <a href="<?= base_url('') ?>home/pengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-laptop"></i>
                                 <p>
                                     Pengeluaran
@@ -97,7 +97,7 @@
 
                         <li class="nav-header">CEK DATA</li>
                         <li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
+                            <a href="<?= base_url('') ?>home/datapemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Pemasukan
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
+                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Pengeluaran
@@ -113,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
+                            <a href="<?= base_url('') ?>home/kasbesar" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-money"></i>
                                 <p>
                                     Kas Besar
@@ -121,7 +121,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
+                            <a href="<?= base_url('') ?>home/kaskecil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-book"></i>
                                 <p>
                                     Kas Kecil
@@ -131,7 +131,7 @@
 
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
+                            <a href="<?= base_url('') ?>home/profil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-user"></i>
                                 <p>
                                     Profil
@@ -175,14 +175,14 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>1.500.000.000</h3>
+                                <h3>Rp 1.500.000</h3>
 
                                 <p>Pemasukan</p>
                             </div>
                             <div class="icon">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="<?= base_url('') ?>home/datapemasukan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -190,14 +190,14 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>2.000.000</h3>
+                                <h3>Rp 2.000.000</h3>
 
                                 <p>Pengeluaran</p>
                             </div>
                             <div class="icon">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="<?= base_url('') ?>home/datapengeluaran" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -212,7 +212,7 @@
                             <div class="icon">
                                 <i class="nav-icon fa fa-fw fa-book"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="<?= base_url('') ?>home/kaskecil" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -227,7 +227,7 @@
                             <div class="icon">
                                 <i class="nav-icon fa fa-fw fa-money"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="<?= base_url('') ?>home/kasbesar" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->

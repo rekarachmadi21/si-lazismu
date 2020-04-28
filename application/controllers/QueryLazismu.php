@@ -1,0 +1,35 @@
+<?php
+
+
+class querylazismu extends CI_Controller
+{
+
+    function tambah_pemasukan()
+    {
+        $id_transaksi = $this->input->post('id_transaksi');
+        $id_muzakki = $this->input->post('id_muzakki');
+        $tgl_transaksi = $this->input->post('tgl_transaksi');
+        $jam_transaksi = $this->input->post('jam_transaksi');
+        $nominal = $this->input->post('nominal');
+        $id_rekening = $this->input->post('id_rekening');
+        $id_pegawai = $this->input->post('id_pegawai');
+        $jenis_transaksi = $this->input->post('jenis_transaksi');
+        $opt = $this->input->post('opt');
+        $ket = $this->input->post('ket');
+
+        $data = array(
+            'id_transaksi' => $id_transaksi,
+            'id_muzakki' => $id_muzakki,
+            'tgl_transaksi' => $tgl_transaksi,
+            'jam_transaksi' => $jam_transaksi,
+            'nominal' => $nominal,
+            'id_rekening' => $id_rekening,
+            'id_pegawai' => $id_pegawai,
+            'jenis_transaksi' => $jenis_transaksi,
+            'ket' => $ket,
+            'opt' => $opt
+        );
+        $this->db->insert('transaksi', $data);
+        redirect('Auth');
+    }
+}

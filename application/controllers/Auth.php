@@ -13,9 +13,17 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         if ($this->form_validation->run() == false) {
-            $this->load->view('templates/auth_header');
-            $this->load->view('auth/login');
-            $this->load->view('templates/auth_footer');
+            $data['title'] = "Dashboard";
+            $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+            if ($data['pegawai']['level'] == 1) {
+                $this->load->view('Admin/dashboard', $data);
+            } else if ($data['pegawai']['level'] == 2) {
+                $this->load->view('Karyawan/dashboard', $data);
+            } else {
+                $this->load->view('templates/auth_header');
+                $this->load->view('auth/login');
+                $this->load->view('templates/auth_footer');
+            }
         } else {
             $this->_login();
         }
