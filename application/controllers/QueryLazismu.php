@@ -30,6 +30,30 @@ class querylazismu extends CI_Controller
             'opt' => $opt
         );
         $this->db->insert('transaksi', $data);
-        redirect('Auth');
+        redirect('Home/Pengeluaran');
+    }
+    function tambah_pengeluaran()
+    {
+        $id_pengeluaran = $this->input->post('id_pengeluaran');
+        $tgl_pengeluaran = $this->input->post('tgl_pengeluaran');
+        $jam_pengeluaran = $this->input->post('jam_pengeluaran');
+        $id_jenis_pengeluaran = $this->input->post('id_jenis_pengeluaran');
+        $id_rekening = $this->input->post('id_rekening');
+        $nominal  = $this->input->post('nominal');
+        $ket = $this->input->post('ket');
+        $id_pegawai = $this->input->post('id_pegawai');
+
+        $data = array(
+            'id_pengeluaran' => $id_pengeluaran,
+            'tgl_pengeluaran' => $tgl_pengeluaran,
+            'jam_pengeluaran' => $jam_pengeluaran,
+            'id_jenis_pengeluaran' => $id_jenis_pengeluaran,
+            'id_rekening' => $id_rekening,
+            'nominal' => $nominal,
+            'ket' => $ket,
+            'id_pegawai ' => $id_pegawai
+        );
+        $this->db->insert('pengeluaran', $data);
+        redirect('Home/pengeluaran');
     }
 }

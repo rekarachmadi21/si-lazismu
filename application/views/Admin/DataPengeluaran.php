@@ -79,7 +79,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pemasukan" class="nav-link  active">
+                            <a href="<?= base_url('') ?>home/pemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-pencil"></i>
                                 <p>
                                     Pemasukan
@@ -106,7 +106,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link  active">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Pengeluaran
@@ -179,21 +179,38 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
+                                            <th>ID Pengeluaran</th>
+                                            <th>ID Pegawai</th>
+                                            <th>ID Rekening</th>
+                                            <th>ID Jenis Pengeluaran</th>
+                                            <th>Tanggal Pengeluaran</th>
+                                            <th>Jam Pengeluaran</th>
+                                            <th>Nominal</th>
+                                            <th>Keterangan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
-                                        </tr>
+                                        <?php
+                                        $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+
+                                        $data = "SELECT * FROM pengeluaran";
+                                        $query = mysqli_query($koneksi, $data);
+
+                                        foreach ($query as $key) {
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $key['id_pengeluaran'] ?></td>
+                                                <td><?php echo $key['id_pegawai'] ?></td>
+                                                <td><?php echo $key['id_rekening'] ?></td>
+                                                <td><?php echo $key['id_jenis_pengeluaran'] ?></td>
+                                                <td><?php echo $key['tgl_pengeluaran'] ?></td>
+                                                <td><?php echo $key['jam_pengeluaran'] ?></td>
+                                                <td><?php echo $key['nominal'] ?></td>
+                                                <td><?php echo $key['ket'] ?></td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

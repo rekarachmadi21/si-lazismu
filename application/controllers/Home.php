@@ -69,6 +69,7 @@ class Home extends CI_Controller
     public function DataPengeluaran()
     {
         $data['title'] = "Data Pengeluaran";
+        $data['pengeluaran'] = $this->db->get_where('pengeluaran')->row_array();
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
         if ($data['pegawai']['level'] == 1) {
             $this->load->view('Admin/DataPengeluaran', $data);

@@ -175,65 +175,53 @@
                         <!-- /.card-header -->
                         <div class="card-body">
 
-                            <form action="<?= base_url('') ?>auth" method="post">
+                            <form action="<?= base_url('') ?>querylazismu/tambah_pengeluaran" method="post">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>ID Pengeluaran</label>
-                                            <input type="text" name="email" id="email" class="form-control">
+                                            <input type="text" name="id_pengeluaran" id="id_pengeluaran" class="form-control" placeholder="Masukan ID Pengeluaran...">
                                         </div>
                                         <div class="form-group">
                                             <label>ID Pegawai</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" placeholder="Masukan ID Pegawai...">
                                         </div>
                                         <div class="form-group">
                                             <label>Tanggal Pengeluaran</label>
-                                            <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" placeholder="21/05/2020" data-mask>
+                                            <input type="text" class="form-control" name="tgl_pengeluaran" id="tgl_pengeluaran" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" placeholder="21/05/2020" data-mask>
                                         </div>
                                         <div class="form-group">
                                             <label>Jam Pengeluaran</label>
-                                            <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputFormat="HH:MM" placeholder="13:10" data-mask>
+                                            <input type="text" name="jam_pengeluaran" id="jam_pengeluaran" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputFormat="HH:MM" placeholder="13:10" data-mask>
                                         </div>
                                         <div class="form-group">
                                             <label>ID Jenis Pengeluaran</label>
-                                            <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" placeholder="21/05/2020" data-mask>
+                                            <input type="text" name="id_jenis_pengeluaran" id="id_jenis_pengeluaran" class="form-control" placeholder="Masukan ID Jenis Pengeluaran...">
                                         </div>
                                         <div class="form-group">
                                             <label>ID Rekening</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="id_rekening" id="id_rekening" class="form-control" placeholder="Masukan ID Rekening...">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
 
                                         <div class="form-group">
                                             <label>Nominal</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>ID Jenis Pengeluaran</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="nominal" id="nominal" class="form-control" placeholder="Masukan Nominal...">
                                         </div>
                                         <div class="form-group">
                                             <label>keterangan</label>
-                                            <textarea type="text" rows="4" class="form-control" placeholder="Keterangan..."></textarea>
+                                            <textarea type="text" name="ket" id="ket" rows="4" class="form-control" placeholder="Keterangan..."></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="input-grup mb-3"></div>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="input-grup">
-                                            <button type="submit" class="btn btn-primary btn-block">Simpan</button>
-                                            <!-- /.col -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="input-grup">
-                                            <button type="submit" class="btn btn-primary btn-block">Batal</button>
-                                            <!-- /.col -->
-                                        </div>
-                                    </div>
+
+                                <div class="input-grup">
+                                    <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+                                    <!-- /.col -->
                                 </div>
+
                             </form>
                         </div>
                     </div>
