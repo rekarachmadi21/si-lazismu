@@ -183,8 +183,7 @@
                                             <input type="text" name="id_pengeluaran" id="id_pengeluaran" class="form-control" placeholder="Masukan ID Pengeluaran...">
                                         </div>
                                         <div class="form-group">
-                                            <label>ID Pegawai</label>
-                                            <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" placeholder="Masukan ID Pegawai...">
+                                            <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" placeholder="Masukan ID Pegawai..." value="<?php echo $pegawai['id_pegawai']; ?>" hidden>
                                         </div>
                                         <div class="form-group">
                                             <label>Tanggal Pengeluaran</label>
@@ -246,6 +245,7 @@
     <!-- date-range-picker -->
     <script src="<?= base_url('') ?>assets/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- bootstrap color picker -->
+
     <script src="<?= base_url('') ?>assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="<?= base_url('') ?>assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>

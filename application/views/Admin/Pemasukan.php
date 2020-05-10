@@ -184,7 +184,20 @@
                                         </div>
                                         <div class="form-group">
                                             <label>ID Muzakki</label>
-                                            <input type="text" name="id_muzakki" id="id_muzakki" class="form-control" placeholder="Masukan ID Muzakki...">
+                                            <select class="form-control select2bs4" id="id_muzakki" name="id_muzakki" style="width: 100%;">
+                                                <?php
+                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+
+                                                $data = "SELECT * FROM muzakki";
+                                                $query = mysqli_query($koneksi, $data);
+
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_muzakki'] ?>"><?php echo $key['id_muzakki'] . " - " . $key['nama_muzakki'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Tanggal Transaksi</label>
@@ -206,11 +219,19 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Jenis Transaksi</label>
-                                            <input type="text" name="jenis_transaksi" id="jenis_transaksi" class="form-control" placeholder="Masukan ID Rekening...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>ID Pegawai</label>
-                                            <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" placeholder="Masukan ID Pegawai...">
+                                            <select class="form-control select2bs4" id="jenis_transaksi" name="jenis_transaksi" style="width: 100%;">
+                                                <?php
+
+                                                $data = "SELECT * FROM jenis_transaksi";
+                                                $query = mysqli_query($koneksi, $data);
+
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_jenis_transaksi'] ?>"><?php echo $key['id_jenis_transaksi'] . " - " . $key['jenis_transaksi'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Option</label>
@@ -222,6 +243,9 @@
                                         <div class="form-group">
                                             <label>keterangan</label>
                                             <textarea type="text" rows="4" name="ket" id="ket" class="form-control" placeholder="Keterangan..."></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" placeholder="Masukan ID Pegawai..." value="<?php echo $pegawai['id_pegawai']; ?>" hidden>
                                         </div>
                                     </div>
                                 </div>

@@ -106,6 +106,16 @@ class Home extends CI_Controller
         }
     }
 
+    public function pemasukan_xls()
+    {
+        $this->load->view('export-excel/pemasukan-xls');
+    }
+
+    public function pengeluaran_xls()
+    {
+        $this->load->view('export-excel/pengeluaran-xls');
+    }
+
     public function Profil()
     {
         $data['title'] = "Kas Kecil";

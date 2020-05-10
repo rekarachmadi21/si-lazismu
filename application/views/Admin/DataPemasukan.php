@@ -217,6 +217,13 @@
                                         ?>
                                     </tbody>
                                 </table>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="input-grup">
+                                            <a href="<?= base_url('') ?>home/pemasukan_xls">Export to excel</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- /.card-body -->
                         </div>
