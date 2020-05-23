@@ -129,6 +129,60 @@
                             </a>
                         </li>
 
+                        <li class="nav-header">REKENING</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Rekening
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Rekening
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">MUZAKKI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Muzakki
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Muzakki
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">PEGAWAI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Pegawai
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Pegawai
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>home/profil" class="nav-link">
@@ -138,6 +192,7 @@
                                 </p>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>/home/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
@@ -155,9 +210,55 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <div class="row">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark"><?= $title; ?></h1>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
             </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- SELECT2 EXAMPLE -->
+                    <div class="card card-default">
+                        <!-- /.card-header -->
+                        <div class="card-body">
+
+                            <form action="<?= base_url('') ?>querylazismu/tambah_pemasukan" method="post">
+                                <div class="form-group">
+                                    <label>ID Pegawai</label>
+                                    <input type="text" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" disabled>
+                                    <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" hidden>
+                                </div>
+                                <div class="form-group">
+                                    <label>ID Transaksi</label>
+                                    <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
+                                </div>
+
+
+                                <div class="input-grup mb-3"></div>
+                                <div class="input-grup">
+
+                                    <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+                                    <!-- /.col -->
+
+                                </div>
+
+                        </div>
+                        </form>
+                    </div>
+                </div>
         </div>
+        </section>
+
+
+    </div>
     </div>
 
     <!-- jQuery -->
@@ -184,6 +285,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="<?= base_url('') ?>assets/dist/js/demo.js"></script>
     <!-- Page script -->
+
     <script>
         $(function() {
             //Initialize Select2 Elements

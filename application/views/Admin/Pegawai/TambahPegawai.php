@@ -69,7 +69,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>" class="nav-link">
+                            <a href="<?= base_url('') ?>" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -78,7 +78,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pemasukan" class="nav-link  active">
+                            <a href="<?= base_url('') ?>home/pemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-pencil"></i>
                                 <p>
                                     Pemasukan
@@ -129,6 +129,60 @@
                             </a>
                         </li>
 
+                        <li class="nav-header">REKENING</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Rekening
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Rekening
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">MUZAKKI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Muzakki
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Muzakki
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">PEGAWAI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Pegawai
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Pegawai
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>home/profil" class="nav-link">
@@ -138,6 +192,7 @@
                                 </p>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>/home/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
@@ -179,14 +234,34 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
+                                            <label>ID Pegawai</label>
+                                            <input type="text" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" disabled>
+                                            <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" hidden>
+                                        </div>
+                                        <div class="form-group">
                                             <label>ID Transaksi</label>
                                             <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Jenis Transaksi</label>
+                                            <select class="form-control select2bs4" id="jenis_transaksi" name="jenis_transaksi" style="width: 100%;">
+                                                <?php
+                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+                                                $data = "SELECT * FROM jenis_transaksi";
+                                                $query = mysqli_query($koneksi, $data);
+
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_jenis_transaksi'] ?>"><?php echo $key['id_jenis_transaksi'] . " - " . $key['jenis_transaksi'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>ID Muzakki</label>
                                             <select class="form-control select2bs4" id="id_muzakki" name="id_muzakki" style="width: 100%;">
                                                 <?php
-                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
 
                                                 $data = "SELECT * FROM muzakki";
                                                 $query = mysqli_query($koneksi, $data);
@@ -200,9 +275,29 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
+                                            <label>ID Rekening</label>
+                                            <select class="form-control select2bs4" id="id_rekening" name="id_rekening" style="width: 100%;">
+                                                <?php
+                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+
+                                                $data = "SELECT * FROM rekening";
+                                                $query = mysqli_query($koneksi, $data);
+
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_rekening'] ?>"><?php echo $key['id_rekening'] . " - " . $key['nama_bank'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label>Tanggal Transaksi</label>
                                             <input type="text" class="form-control" name="tgl_transaksi" id="tgl_transaksi" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy/mm/dd" placeholder="2020/05/21" data-mask>
                                         </div>
+                                    </div>
+                                    <div class="col-md-6">
+
                                         <div class="form-group">
                                             <label>Jam Transaksi</label>
                                             <input type="text" class="form-control" name="jam_transaksi" id="jam_transaksi" data-inputmask-alias="datetime" data-inputmask-inputFormat="HH:MM" placeholder="13:10" data-mask>
@@ -211,28 +306,7 @@
                                             <label>Nominal</label>
                                             <input type="text" name="nominal" id="nominal" class="form-control" placeholder="Masukan Nominal...">
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>ID Rekening</label>
-                                            <input type="text" name="id_rekening" id="id_rekening" class="form-control" placeholder="Masukan ID Rekening...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Jenis Transaksi</label>
-                                            <select class="form-control select2bs4" id="jenis_transaksi" name="jenis_transaksi" style="width: 100%;">
-                                                <?php
 
-                                                $data = "SELECT * FROM jenis_transaksi";
-                                                $query = mysqli_query($koneksi, $data);
-
-                                                foreach ($query as $key) {
-                                                ?>
-                                                    <option value="<?php echo $key['id_jenis_transaksi'] ?>"><?php echo $key['id_jenis_transaksi'] . " - " . $key['jenis_transaksi'] ?></option>
-                                                <?php
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
                                         <div class="form-group">
                                             <label>Option</label>
                                             <select name="opt" id="opt" class="custom-select">
@@ -243,9 +317,6 @@
                                         <div class="form-group">
                                             <label>keterangan</label>
                                             <textarea type="text" rows="4" name="ket" id="ket" class="form-control" placeholder="Keterangan..."></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" placeholder="Masukan ID Pegawai..." value="<?php echo $pegawai['id_pegawai']; ?>" hidden>
                                         </div>
                                     </div>
                                 </div>
@@ -290,6 +361,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="<?= base_url('') ?>assets/dist/js/demo.js"></script>
     <!-- Page script -->
+
     <script>
         $(function() {
             //Initialize Select2 Elements

@@ -70,7 +70,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>" class="nav-link">
+                            <a href="<?= base_url('') ?>" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -98,7 +98,7 @@
 
                         <li class="nav-header">CEK DATA</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapemasukan" class="nav-link   active">
+                            <a href="<?= base_url('') ?>home/datapemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Pemasukan
@@ -130,6 +130,60 @@
                             </a>
                         </li>
 
+                        <li class="nav-header">REKENING</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Rekening
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Rekening
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">MUZAKKI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Muzakki
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Muzakki
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">PEGAWAI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Pegawai
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Pegawai
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>home/profil" class="nav-link">
@@ -139,6 +193,7 @@
                                 </p>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>/home/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>

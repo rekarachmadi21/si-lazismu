@@ -129,6 +129,60 @@
                             </a>
                         </li>
 
+                        <li class="nav-header">REKENING</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Rekening
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Rekening
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">MUZAKKI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datapemasukan" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Muzakki
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Muzakki
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">PEGAWAI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Pegawai
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Pegawai
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>home/profil" class="nav-link">
@@ -138,6 +192,7 @@
                                 </p>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>/home/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
@@ -175,8 +230,18 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>Rp 1.500.000</h3>
+                                <?php
+                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
 
+                                $data = "SELECT * FROM transaksi";
+                                $query = mysqli_query($koneksi, $data);
+                                $pemasukan = 0;
+                                foreach ($query as $key) {
+                                    $pemasukan = $pemasukan + $key['nominal'];
+                                }
+
+                                ?>
+                                <h3><?php echo "Rp. " . $pemasukan; ?></h3>
                                 <p>Pemasukan</p>
                             </div>
                             <div class="icon">
@@ -190,8 +255,16 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>Rp 2.000.000</h3>
+                                <?php
+                                $data = "SELECT * FROM pengeluaran";
+                                $query = mysqli_query($koneksi, $data);
+                                $pengeluaran = 0;
+                                foreach ($query as $key) {
+                                    $pengeluaran = $pengeluaran + $key['nominal'];
+                                }
 
+                                ?>
+                                <h3><?php echo "Rp. " . $pengeluaran; ?></h3>
                                 <p>Pengeluaran</p>
                             </div>
                             <div class="icon">

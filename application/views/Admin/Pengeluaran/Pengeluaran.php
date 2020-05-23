@@ -129,6 +129,60 @@
                             </a>
                         </li>
 
+                        <li class="nav-header">REKENING</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Rekening
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Rekening
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">MUZAKKI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Muzakki
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Muzakki
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">PEGAWAI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Pegawai
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Pegawai
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>home/profil" class="nav-link">
@@ -138,6 +192,7 @@
                                 </p>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>/home/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
@@ -155,8 +210,106 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <div class="row">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark"><?= $title; ?></h1>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
             </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- SELECT2 EXAMPLE -->
+                    <div class="card card-default">
+                        <!-- /.card-header -->
+                        <div class="card-body">
+
+                            <form action="<?= base_url('') ?>querylazismu/tambah_pengeluaran" method="post">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>ID Pegawai</label>
+                                            <input type="text" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" disabled>
+                                            <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" hidden>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID Pengeluaran</label>
+                                            <input type="text" name="id_pengeluaran" id="id_pengeluaran" class="form-control" placeholder="Masukan ID Pengeluaran...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID Jenis Pengeluaran</label>
+                                            <select class="form-control select2bs4" id="id_jenis_pengeluaran" name="id_jenis_pengeluaran" style="width: 100%;">
+                                                <?php
+                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+                                                $data = "SELECT * FROM jenis_pengeluaran";
+                                                $query = mysqli_query($koneksi, $data);
+
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_pengeluaran'] ?>"><?php echo $key['id_pengeluaran'] . " - " . $key['nama_pengeluaran'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID Rekening</label>
+                                            <select class="form-control select2bs4" id="id_rekening" name="id_rekening" style="width: 100%;">
+                                                <?php
+                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+
+                                                $data = "SELECT * FROM rekening";
+                                                $query = mysqli_query($koneksi, $data);
+
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_rekening'] ?>"><?php echo $key['id_rekening'] . " - " . $key['nama_bank'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tanggal Pengeluaran</label>
+                                            <input type="text" class="form-control" name="tgl_pengeluaran" id="tgl_pengeluaran" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" placeholder="21/05/2020" data-mask>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Jam Pengeluaran</label>
+                                            <input type="text" name="jam_pengeluaran" id="jam_pengeluaran" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputFormat="HH:MM" placeholder="13:10" data-mask>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nominal</label>
+                                            <input type="text" name="nominal" id="nominal" class="form-control" placeholder="Masukan Nominal...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>keterangan</label>
+                                            <textarea type="text" name="ket" id="ket" rows="4" class="form-control" placeholder="Keterangan..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-grup mb-3"></div>
+
+                                <div class="input-grup">
+                                    <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+                                    <!-- /.col -->
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
         </div>
     </div>
 
@@ -174,6 +327,7 @@
     <!-- date-range-picker -->
     <script src="<?= base_url('') ?>assets/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- bootstrap color picker -->
+
     <script src="<?= base_url('') ?>assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="<?= base_url('') ?>assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>

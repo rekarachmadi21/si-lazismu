@@ -69,7 +69,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="<?php base_url('') ?>" class="nav-link active">
+                            <a href="<?= base_url('') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -78,7 +78,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?php base_url('') ?>" class="nav-link">
+                            <a href="<?= base_url('') ?>home/pemasukan" class="nav-link  active">
                                 <i class="nav-icon fa fa-fw fa-pencil"></i>
                                 <p>
                                     Pemasukan
@@ -87,7 +87,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?php base_url('') ?>" class="nav-link">
+                            <a href="<?= base_url('') ?>home/pengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-laptop"></i>
                                 <p>
                                     Pengeluaran
@@ -97,7 +97,7 @@
 
                         <li class="nav-header">CEK DATA</li>
                         <li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
+                            <a href="<?= base_url('') ?>home/datapemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Pemasukan
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
+                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Pengeluaran
@@ -113,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
+                            <a href="<?= base_url('') ?>home/kasbesar" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-money"></i>
                                 <p>
                                     Kas Besar
@@ -121,7 +121,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
+                            <a href="<?= base_url('') ?>home/kaskecil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-book"></i>
                                 <p>
                                     Kas Kecil
@@ -131,7 +131,7 @@
 
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
+                            <a href="<?= base_url('') ?>home/profil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-user"></i>
                                 <p>
                                     Profil
@@ -160,7 +160,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Lazismu</h1>
+                            <h1 class="m-0 text-dark"><?= $title; ?></h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -169,71 +169,101 @@
 
             <!-- Main content -->
             <section class="content">
-                <!-- Small boxes (Stat box) -->
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-info">
-                            <div class="inner">
-                                <h3>1.500.000.000</h3>
+                <div class="container-fluid">
+                    <!-- SELECT2 EXAMPLE -->
+                    <div class="card card-default">
+                        <!-- /.card-header -->
+                        <div class="card-body">
 
-                                <p>Pemasukan</p>
-                            </div>
-                            <div class="icon">
-                                <i class="nav-icon fa fa-fw fa-inbox"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-success">
-                            <div class="inner">
-                                <h3>2.000.000</h3>
+                            <form action="<?= base_url('') ?>querylazismu/tambah_pemasukan" method="post">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>ID Transaksi</label>
+                                            <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID Muzakki</label>
+                                            <select class="form-control select2bs4" id="id_muzakki" name="id_muzakki" style="width: 100%;">
+                                                <?php
+                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
 
-                                <p>Pengeluaran</p>
-                            </div>
-                            <div class="icon">
-                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-warning">
-                            <div class="inner">
-                                <h3>44</h3>
+                                                $data = "SELECT * FROM muzakki";
+                                                $query = mysqli_query($koneksi, $data);
 
-                                <p>Kas Kecil</p>
-                            </div>
-                            <div class="icon">
-                                <i class="nav-icon fa fa-fw fa-book"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-danger">
-                            <div class="inner">
-                                <h3>65</h3>
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_muzakki'] ?>"><?php echo $key['id_muzakki'] . " - " . $key['nama_muzakki'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tanggal Transaksi</label>
+                                            <input type="text" class="form-control" name="tgl_transaksi" id="tgl_transaksi" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy/mm/dd" placeholder="2020/05/21" data-mask>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Jam Transaksi</label>
+                                            <input type="text" class="form-control" name="jam_transaksi" id="jam_transaksi" data-inputmask-alias="datetime" data-inputmask-inputFormat="HH:MM" placeholder="13:10" data-mask>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nominal</label>
+                                            <input type="text" name="nominal" id="nominal" class="form-control" placeholder="Masukan Nominal...">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>ID Rekening</label>
+                                            <input type="text" name="id_rekening" id="id_rekening" class="form-control" placeholder="Masukan ID Rekening...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Jenis Transaksi</label>
+                                            <select class="form-control select2bs4" id="jenis_transaksi" name="jenis_transaksi" style="width: 100%;">
+                                                <?php
 
-                                <p>Kas Besar</p>
-                            </div>
-                            <div class="icon">
-                                <i class="nav-icon fa fa-fw fa-money"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                                $data = "SELECT * FROM jenis_transaksi";
+                                                $query = mysqli_query($koneksi, $data);
+
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_jenis_transaksi'] ?>"><?php echo $key['id_jenis_transaksi'] . " - " . $key['jenis_transaksi'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Option</label>
+                                            <select name="opt" id="opt" class="custom-select">
+                                                <option value="Terikat">Terikat</option>
+                                                <option value="Tidak Terikat">Tidak Terikat</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>keterangan</label>
+                                            <textarea type="text" rows="4" name="ket" id="ket" class="form-control" placeholder="Keterangan..."></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" placeholder="Masukan ID Pegawai..." value="<?php echo $pegawai['id_pegawai']; ?>" hidden>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-grup mb-3"></div>
+                                <div class="input-grup">
+                                    <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+                                    <!-- /.col -->
+                                </div>
+
                         </div>
+                        </form>
                     </div>
-                    <!-- ./col -->
                 </div>
-            </section>
         </div>
+        </section>
+
+
+    </div>
     </div>
 
     <!-- jQuery -->

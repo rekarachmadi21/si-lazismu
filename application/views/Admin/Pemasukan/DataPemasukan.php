@@ -70,7 +70,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>" class="nav-link">
+                            <a href="<?= base_url('') ?>" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -106,7 +106,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link  active">
+                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Pengeluaran
@@ -130,6 +130,60 @@
                             </a>
                         </li>
 
+                        <li class="nav-header">REKENING</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Rekening
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Rekening
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">MUZAKKI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Muzakki
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Muzakki
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">PEGAWAI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Pegawai
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Pegawai
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>home/profil" class="nav-link">
@@ -139,6 +193,7 @@
                                 </p>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>/home/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
@@ -179,34 +234,38 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>ID Pengeluaran</th>
-                                            <th>ID Pegawai</th>
-                                            <th>ID Rekening</th>
-                                            <th>ID Jenis Pengeluaran</th>
-                                            <th>Tanggal Pengeluaran</th>
-                                            <th>Jam Pengeluaran</th>
+                                            <th>ID Transaksi</th>
+                                            <th>ID Muzakki</th>
+                                            <th>Tanggal Transaksi</th>
+                                            <th>Jam Transaksi</th>
                                             <th>Nominal</th>
+                                            <th>ID Rekening</th>
+                                            <th>ID Pegawai</th>
+                                            <th>Jenis Transaksi</th>
                                             <th>Keterangan</th>
+                                            <th>Option</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
 
-                                        $data = "SELECT * FROM pengeluaran";
+                                        $data = "SELECT * FROM transaksi";
                                         $query = mysqli_query($koneksi, $data);
 
                                         foreach ($query as $key) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $key['id_pengeluaran'] ?></td>
-                                                <td><?php echo $key['id_pegawai'] ?></td>
-                                                <td><?php echo $key['id_rekening'] ?></td>
-                                                <td><?php echo $key['id_jenis_pengeluaran'] ?></td>
-                                                <td><?php echo $key['tgl_pengeluaran'] ?></td>
-                                                <td><?php echo $key['jam_pengeluaran'] ?></td>
+                                                <td><?php echo $key['id_transaksi'] ?></td>
+                                                <td><?php echo $key['id_muzakki'] ?></td>
+                                                <td><?php echo $key['tgl_transaksi'] ?></td>
+                                                <td><?php echo $key['jam_transaksi'] ?></td>
                                                 <td><?php echo $key['nominal'] ?></td>
+                                                <td><?php echo $key['id_rekening'] ?></td>
+                                                <td><?php echo $key['id_pegawai'] ?></td>
+                                                <td><?php echo $key['jenis_transaksi'] ?></td>
                                                 <td><?php echo $key['ket'] ?></td>
+                                                <td><?php echo $key['opt'] ?></td>
                                             </tr>
                                         <?php
                                         }
@@ -216,7 +275,7 @@
                                 <div class="row">
                                     <div class="col-md-2">
                                         <div class="input-grup">
-                                            <a href="<?= base_url('') ?>home/pengeluaran_xls">Export to excel</a>
+                                            <a href="<?= base_url('') ?>home/pemasukan_xls">Export to excel</a>
                                         </div>
                                     </div>
                                 </div>

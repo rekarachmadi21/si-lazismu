@@ -13,7 +13,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url('') ?>assets/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1 /css/ionicons.min.css">
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- daterange picker -->
@@ -31,7 +31,8 @@
     <link rel="stylesheet" href="<?= base_url('') ?>assets/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('') ?>assets/dist/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?= base_url('') ?>assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
@@ -129,6 +130,60 @@
                             </a>
                         </li>
 
+                        <li class="nav-header">REKENING</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Rekening
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Rekening
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">MUZAKKI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Muzakki
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Muzakki
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-header">PEGAWAI</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                                <p>
+                                    Tambah Pegawai
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
+                                <p>
+                                    Data Pegawai
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>home/profil" class="nav-link">
@@ -138,6 +193,7 @@
                                 </p>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>/home/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
@@ -155,106 +211,120 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <div class="row">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark"><?= $title; ?></h1>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
             </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="card">
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Pengeluaran</th>
+                                            <th>ID Pegawai</th>
+                                            <th>ID Rekening</th>
+                                            <th>ID Jenis Pengeluaran</th>
+                                            <th>Tanggal Pengeluaran</th>
+                                            <th>Jam Pengeluaran</th>
+                                            <th>Nominal</th>
+                                            <th>Keterangan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+
+                                        $data = "SELECT * FROM pengeluaran";
+                                        $query = mysqli_query($koneksi, $data);
+
+                                        foreach ($query as $key) {
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $key['id_pengeluaran'] ?></td>
+                                                <td><?php echo $key['id_pegawai'] ?></td>
+                                                <td><?php echo $key['id_rekening'] ?></td>
+                                                <td><?php echo $key['id_jenis_pengeluaran'] ?></td>
+                                                <td><?php echo $key['tgl_pengeluaran'] ?></td>
+                                                <td><?php echo $key['jam_pengeluaran'] ?></td>
+                                                <td><?php echo $key['nominal'] ?></td>
+                                                <td><?php echo $key['ket'] ?></td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="input-grup">
+                                            <a href="<?= base_url('') ?>home/pengeluaran_xls">Export to excel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </section>
+            <!-- /.content -->
         </div>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
+    <!-- ./wrapper -->
 
     <!-- jQuery -->
     <script src="<?= base_url('') ?>assets/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="<?= base_url('') ?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Select2 -->
-    <script src="<?= base_url('') ?>assets/plugins/select2/js/select2.full.min.js"></script>
-    <!-- Bootstrap4 Duallistbox -->
-    <script src="<?= base_url('') ?>assets/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
-    <!-- InputMask -->
-    <script src="<?= base_url('') ?>assets/plugins/moment/moment.min.js"></script>
-    <script src="<?= base_url('') ?>assets/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
-    <!-- date-range-picker -->
-    <script src="<?= base_url('') ?>assets/plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- bootstrap color picker -->
-    <script src="<?= base_url('') ?>assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="<?= base_url('') ?>assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Bootstrap Switch -->
-    <script src="<?= base_url('') ?>assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <!-- DataTables -->
+    <script src="<?= base_url('') ?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url('') ?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url('') ?>assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?= base_url('') ?>assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url('') ?>assets/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="<?= base_url('') ?>assets/dist/js/demo.js"></script>
-    <!-- Page script -->
+    <!-- page script -->
     <script>
         $(function() {
-            //Initialize Select2 Elements
-            $('.select2').select2()
-
-            //Initialize Select2 Elements
-            $('.select2bs4').select2({
-                theme: 'bootstrap4'
-            })
-
-            //Datemask dd/mm/yyyy
-            $('#datemask').inputmask('dd/mm/yyyy', {
-                'placeholder': 'dd/mm/yyyy'
-            })
-            //Datemask2 mm/dd/yyyy
-            $('#datemask2').inputmask('mm/dd/yyyy', {
-                'placeholder': 'mm/dd/yyyy'
-            })
-            //Money Euro
-            $('[data-mask]').inputmask()
-
-            //Date range picker
-            $('#reservation').daterangepicker()
-            //Date range picker with time picker
-            $('#reservationtime').daterangepicker({
-                timePicker: true,
-                timePickerIncrement: 30,
-                locale: {
-                    format: 'MM/DD/YYYY hh:mm A'
-                }
-            })
-            //Date range as a button
-            $('#daterange-btn').daterangepicker({
-                    ranges: {
-                        'Today': [moment(), moment()],
-                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                        'This Month': [moment().startOf('month'), moment().endOf('month')],
-                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                    },
-                    startDate: moment().subtract(29, 'days'),
-                    endDate: moment()
-                },
-                function(start, end) {
-                    $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-                }
-            )
-
-            //Timepicker
-            $('#timepicker').datetimepicker({
-                format: 'LT'
-            })
-
-            //Bootstrap Duallistbox
-            $('.duallistbox').bootstrapDualListbox()
-
-            //Colorpicker
-            $('.my-colorpicker1').colorpicker()
-            //color picker with addon
-            $('.my-colorpicker2').colorpicker()
-
-            $('.my-colorpicker2').on('colorpickerChange', function(event) {
-                $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+            $("#example1").DataTable({
+                "responsive": true,
+                "autoWidth": false,
             });
-
-            $("input[data-bootstrap-switch]").each(function() {
-                $(this).bootstrapSwitch('state', $(this).prop('checked'));
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
             });
-
-        })
+        });
     </script>
 </body>
 

@@ -30,7 +30,7 @@ class querylazismu extends CI_Controller
             'opt' => $opt
         );
         $this->db->insert('transaksi', $data);
-        redirect('Home/Pengeluaran');
+        redirect('Home/Pemasukan');
     }
     function tambah_pengeluaran()
     {

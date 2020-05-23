@@ -29,12 +29,12 @@ class Home extends CI_Controller
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
         if ($data['pegawai']['level'] == 1) {
             if ($this->form_validation->run() == false) {
-                $this->load->view('Admin/Pemasukan', $data);
+                $this->load->view('Admin/Pemasukan/Pemasukan', $data);
             } else {
                 echo "sukses";
             }
         } else if ($data['pegawai']['level'] == 2) {
-            $this->load->view('Karyawan/Pemasukan', $data);
+            $this->load->view('Karyawan/Pemasukan/Pemasukan', $data);
         } else {
             redirect('auth');
         }
@@ -45,9 +45,9 @@ class Home extends CI_Controller
         $data['title'] = "Pengeluaran";
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
         if ($data['pegawai']['level'] == 1) {
-            $this->load->view('Admin/Pengeluaran', $data);
+            $this->load->view('Admin/Pengeluaran/Pengeluaran', $data);
         } else if ($data['pegawai']['level'] == 2) {
-            $this->load->view('Karyawan/Pengeluaran', $data);
+            $this->load->view('Karyawan/Pengeluaran/Pengeluaran', $data);
         } else {
             redirect('auth');
         }
@@ -58,9 +58,9 @@ class Home extends CI_Controller
         $data['title'] = "Data Pemasukan";
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
         if ($data['pegawai']['level'] == 1) {
-            $this->load->view('Admin/DataPemasukan', $data);
+            $this->load->view('Admin/Pemasukan/DataPemasukan', $data);
         } else if ($data['pegawai']['level'] == 2) {
-            $this->load->view('Karyawan/DataPemasukan', $data);
+            $this->load->view('Karyawan/Pemasukan/DataPemasukan', $data);
         } else {
             redirect('auth');
         }
@@ -72,9 +72,9 @@ class Home extends CI_Controller
         $data['pengeluaran'] = $this->db->get_where('pengeluaran')->row_array();
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
         if ($data['pegawai']['level'] == 1) {
-            $this->load->view('Admin/DataPengeluaran', $data);
+            $this->load->view('Admin/Pengeluaran/DataPengeluaran', $data);
         } else if ($data['pegawai']['level'] == 2) {
-            $this->load->view('Karyawan/DataPengeluaran', $data);
+            $this->load->view('Karyawan/Pengeluaran/DataPengeluaran', $data);
         } else {
             redirect('auth');
         }
@@ -85,9 +85,9 @@ class Home extends CI_Controller
         $data['title'] = "Kas Besar";
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
         if ($data['pegawai']['level'] == 1) {
-            $this->load->view('Admin/KasBesar', $data);
+            $this->load->view('Admin/Pengeluaran/KasBesar', $data);
         } else if ($data['pegawai']['level'] == 2) {
-            $this->load->view('Karyawan/KasBesar', $data);
+            $this->load->view('Karyawan/Pengeluaran/KasBesar', $data);
         } else {
             redirect('auth');
         }
@@ -98,9 +98,86 @@ class Home extends CI_Controller
         $data['title'] = "Kas Kecil";
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
         if ($data['pegawai']['level'] == 1) {
-            $this->load->view('Admin/KasKecil', $data);
+            $this->load->view('Admin/Pengeluaran/KasKecil', $data);
         } else if ($data['pegawai']['level'] == 2) {
-            $this->load->view('Karyawan/KasKecil', $data);
+            $this->load->view('Karyawan/Pengeluaran/KasKecil', $data);
+        } else {
+            redirect('auth');
+        }
+    }
+
+    //Rekening
+    public function TambahRekening()
+    {
+        $data['title'] = "Tambah Rekening";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/Rekening/Rekening', $data);
+        } else if ($data['pegawai']['level'] == 2) {
+            $this->load->view('Karyawan/Rekening/Rekening', $data);
+        } else {
+            redirect('auth');
+        }
+    }
+
+    public function DataRekening()
+    {
+        $data['title'] = "Data Rekening";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/Rekening/DataRekening', $data);
+        } else if ($data['pegawai']['level'] == 2) {
+            $this->load->view('Karyawan/Pengeluaran/DataRekening', $data);
+        } else {
+            redirect('auth');
+        }
+    }
+
+
+    //Muzakki
+    public function TambahMuzakki()
+    {
+        $data['title'] = "Tambah Muzakki";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/Muzakki/TambahMuzakki', $data);
+        } else if ($data['pegawai']['level'] == 2) {
+            $this->load->view('Karyawan/Muzakki/TambahMuzakki', $data);
+        } else {
+            redirect('auth');
+        }
+    }
+
+    public function DataMuzakki()
+    {
+        $data['title'] = "Data Muzakki";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/Muzakki/DataMuzakki', $data);
+        } else if ($data['pegawai']['level'] == 2) {
+            $this->load->view('Karyawan/Muzakki/DataMuzakki', $data);
+        } else {
+            redirect('auth');
+        }
+    }
+
+    //Pegawai
+    public function TambahPegawai()
+    {
+        $data['title'] = "Tambah Pegawai";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/Pegawai/TambahPegawai', $data);
+        } else {
+            redirect('auth');
+        }
+    }
+    public function DataPegawai()
+    {
+        $data['title'] = "Data Pegawai";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/Pegawai/DataPegawai', $data);
         } else {
             redirect('auth');
         }
@@ -118,7 +195,7 @@ class Home extends CI_Controller
 
     public function Profil()
     {
-        $data['title'] = "Kas Kecil";
+        $data['title'] = "Profil";
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
         if ($data['pegawai']['level'] == 1) {
             $this->load->view('Admin/Profil', $data);
