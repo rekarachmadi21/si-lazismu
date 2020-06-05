@@ -70,7 +70,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>" class="nav-link active">
+                            <a href="<?= base_url('') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -176,7 +176,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link">
+                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link active">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Pegawai
@@ -234,38 +234,32 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>ID Transaksi</th>
-                                            <th>ID Muzakki</th>
-                                            <th>Tanggal Transaksi</th>
-                                            <th>Jam Transaksi</th>
-                                            <th>Nominal</th>
-                                            <th>ID Rekening</th>
                                             <th>ID Pegawai</th>
-                                            <th>Jenis Transaksi</th>
-                                            <th>Keterangan</th>
-                                            <th>Option</th>
+                                            <th>Nama Pegawai</th>
+                                            <th>Email</th>
+                                            <th>Username</th>
+                                            <th>Password</th>
+                                            <th>Level/Jabatan</th>
+                                            <th>Aktif</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
 
-                                        $data = "SELECT * FROM transaksi";
+                                        $data = "SELECT * FROM pegawai";
                                         $query = mysqli_query($koneksi, $data);
 
                                         foreach ($query as $key) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $key['id_transaksi'] ?></td>
-                                                <td><?php echo $key['id_muzakki'] ?></td>
-                                                <td><?php echo $key['tgl_transaksi'] ?></td>
-                                                <td><?php echo $key['jam_transaksi'] ?></td>
-                                                <td><?php echo $key['nominal'] ?></td>
-                                                <td><?php echo $key['id_rekening'] ?></td>
                                                 <td><?php echo $key['id_pegawai'] ?></td>
-                                                <td><?php echo $key['jenis_transaksi'] ?></td>
-                                                <td><?php echo $key['ket'] ?></td>
-                                                <td><?php echo $key['opt'] ?></td>
+                                                <td><?php echo $key['nama_pegawai'] ?></td>
+                                                <td><?php echo $key['email'] ?></td>
+                                                <td><?php echo $key['username'] ?></td>
+                                                <td><?php echo $key['password'] ?></td>
+                                                <td><?php echo $key['level'] ?></td>
+                                                <td><?php echo $key['is_aktif'] ?></td>
                                             </tr>
                                         <?php
                                         }

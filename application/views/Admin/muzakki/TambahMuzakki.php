@@ -69,7 +69,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>" class="nav-link active">
+                            <a href="<?= base_url('') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -149,7 +149,7 @@
 
                         <li class="nav-header">MUZAKKI</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link">
+                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link active">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Muzakki
@@ -234,16 +234,20 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>ID Pegawai</label>
+                                            <label>ID Muzzaki</label>
                                             <input type="text" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" disabled>
                                             <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" hidden>
                                         </div>
                                         <div class="form-group">
-                                            <label>ID Transaksi</label>
+                                            <label>ID Golongan</label>
                                             <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
                                         </div>
                                         <div class="form-group">
-                                            <label>Jenis Transaksi</label>
+                                            <label>Nama Muzzaki</label>
+                                            <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nomor Telepon Muzzaki</label>
                                             <select class="form-control select2bs4" id="jenis_transaksi" name="jenis_transaksi" style="width: 100%;">
                                                 <?php
                                                 $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
@@ -259,7 +263,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>ID Muzakki</label>
+                                            <label>NPWP</label>
                                             <select class="form-control select2bs4" id="id_muzakki" name="id_muzakki" style="width: 100%;">
                                                 <?php
 
@@ -275,7 +279,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>ID Rekening</label>
+                                            <label>NPWZ</label>
                                             <select class="form-control select2bs4" id="id_rekening" name="id_rekening" style="width: 100%;">
                                                 <?php
                                                 $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
@@ -291,31 +295,11 @@
                                                 ?>
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Tanggal Transaksi</label>
-                                            <input type="text" class="form-control" name="tgl_transaksi" id="tgl_transaksi" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy/mm/dd" placeholder="2020/05/21" data-mask>
-                                        </div>
                                     </div>
                                     <div class="col-md-6">
 
                                         <div class="form-group">
-                                            <label>Jam Transaksi</label>
-                                            <input type="text" class="form-control" name="jam_transaksi" id="jam_transaksi" data-inputmask-alias="datetime" data-inputmask-inputFormat="HH:MM" placeholder="13:10" data-mask>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Nominal</label>
-                                            <input type="text" name="nominal" id="nominal" class="form-control" placeholder="Masukan Nominal...">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Option</label>
-                                            <select name="opt" id="opt" class="custom-select">
-                                                <option value="Terikat">Terikat</option>
-                                                <option value="Tidak Terikat">Tidak Terikat</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>keterangan</label>
+                                            <label>Alamat</label>
                                             <textarea type="text" rows="4" name="ket" id="ket" class="form-control" placeholder="Keterangan..."></textarea>
                                         </div>
                                     </div>

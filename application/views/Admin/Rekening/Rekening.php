@@ -237,10 +237,13 @@
                                     <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" hidden>
                                 </div>
                                 <div class="form-group">
-                                    <label>ID Transaksi</label>
+                                    <label>ID Rekening</label>
                                     <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
                                 </div>
-
+                                <div class="form-group">
+                                    <label>Nama Bank</label>
+                                    <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
+                                </div>
 
                                 <div class="input-grup mb-3"></div>
                                 <div class="input-grup">

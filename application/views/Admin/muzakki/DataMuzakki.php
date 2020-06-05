@@ -70,7 +70,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>" class="nav-link active">
+                            <a href="<?= base_url('') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -158,7 +158,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link">
+                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link active">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Muzakki
@@ -234,23 +234,20 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>ID Transaksi</th>
                                             <th>ID Muzakki</th>
-                                            <th>Tanggal Transaksi</th>
-                                            <th>Jam Transaksi</th>
-                                            <th>Nominal</th>
-                                            <th>ID Rekening</th>
-                                            <th>ID Pegawai</th>
-                                            <th>Jenis Transaksi</th>
-                                            <th>Keterangan</th>
-                                            <th>Option</th>
+                                            <th>Nama Muzakki</th>
+                                            <th>Alamat Muzakki</th>
+                                            <th>Nomor Telepon Muzakki</th>
+                                            <th>Npwp</th>
+                                            <th>Npwz</th>
+                                            <th>Golongan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
 
-                                        $data = "SELECT * FROM muzakki";
+                                        $data = "SELECT muzakki.id_muzakki as id_muzakki, muzakki.nama_muzakki as nama_muzakki, muzakki.alamat_muzakki as alamat_muzakki, muzakki.notelp_muzakki as notelp_muzakki, muzakki.npwp as npwp, muzakki.npwz as npwz,golongan.nama_golongan as nama_golongan  FROM muzakki INNER JOIN golongan ON muzakki.id_golongan = golongan.id_golongan";
                                         $query = mysqli_query($koneksi, $data);
 
                                         foreach ($query as $key) {
@@ -262,10 +259,7 @@
                                                 <td><?php echo $key['notelp_muzakki'] ?></td>
                                                 <td><?php echo $key['npwp'] ?></td>
                                                 <td><?php echo $key['npwz'] ?></td>
-                                                <td><?php echo $key['id_golongan'] ?></td>
-                                                <td><?php echo $key['jenis_transaksi'] ?></td>
-                                                <td><?php echo $key['ket'] ?></td>
-                                                <td><?php echo $key['opt'] ?></td>
+                                                <td><?php echo $key['nama_golongan'] ?></td>
                                             </tr>
                                         <?php
                                         }
