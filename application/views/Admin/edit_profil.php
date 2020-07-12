@@ -52,7 +52,7 @@
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <img src="<?= base_url('') ?>assets/dist/img/lazismu.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Lazismu</span> </a> <!-- Sidebar -->
+                <span class="brand-text font-weight-light">Lazisnmu</span> </a> <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -225,26 +225,139 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
+
+
+
+
+
+
                     <!-- SELECT2 EXAMPLE -->
                     <div class="card card-default">
                         <!-- /.card-header -->
                         <div class="card-body">
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-1">
-                                        <tex>ID</tex>
+
+                                    <div class="col-md-8 border shadow mt-4 ml-5">
+                                        <?php
+                                        $id = $_GET['id'];
+                                        ?>
+                                        <form action="<?= base_url('') ?>querylazismu/edit_profil" method="post">
+                                            <div class="row mt-3 ml-2">
+                                                <div class="col-md-10">
+
+                                                    <div class="form-group">
+                                                        <label>Nomor Karyawan</label>
+                                                        <input type="text" class="form-control" value="<?php echo $this->db->query("SELECT id_pegawai FROM pegawai WHERE id_pegawai = $id")->row()->id_pegawai; ?>" disabled>
+                                                        <input type="text" name="id_pegawai" class="form-control" value="<?php echo $this->db->query("SELECT id_pegawai FROM pegawai WHERE id_pegawai = $id")->row()->id_pegawai; ?>" hidden>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row ml-2">
+                                                <div class="col-md-10">
+
+                                                    <div class="form-group">
+                                                        <label>email</label>
+                                                        <input type="email" name="email" class="form-control" value="<?php echo $this->db->query("SELECT email FROM pegawai WHERE id_pegawai = $id")->row()->email; ?>" disabled>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row ml-2">
+                                                <div class="col-md-10">
+
+                                                    <div class="form-group">
+                                                        <label>NIK</label>
+                                                        <input type="text" name="nik_pegawai" class="form-control" value="<?php echo $this->db->query("SELECT NIK_pegawai FROM pegawai WHERE id_pegawai = $id")->row()->NIK_pegawai; ?>">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row ml-2">
+                                                <div class="col-md-10">
+
+                                                    <div class="form-group">
+                                                        <label>Nama Lengkap</label>
+                                                        <input type="text" name="nama_pegawai" class="form-control" value="<?php echo $this->db->query("SELECT nama_pegawai FROM pegawai WHERE id_pegawai = $id")->row()->nama_pegawai; ?>">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row ml-2">
+                                                <div class="col-md-10">
+
+                                                    <div class="form-group">
+                                                        <label>Tanggal Lahir</label>
+                                                        <input type="text" class="form-control" name="tanggal_lahir" id="tanggal_lahir" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy/mm/dd" placeholder="yyyy/mm/dd" value="<?php echo $this->db->query("SELECT tanggal_lahir FROM pegawai WHERE id_pegawai = $id")->row()->tanggal_lahir; ?>" data-mask>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class=" row ml-2">
+                                                <div class="col-md-10">
+
+                                                    <div class="form-group">
+                                                        <label>Jenis Kelamin </label>
+                                                        <select name="jenis_kelamin" id="jenis_kelamin" class="custom-select">
+                                                            <option value="Laki-laki">Laki-laki</option>
+                                                            <option value="Perempuan">Perempuan</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row ml-2">
+                                                <div class="col-md-10">
+
+                                                    <div class="form-group">
+                                                        <label>Alamat lengkap</label>
+                                                        <textarea type="text" rows="4" name="alamat_lengkap" id="ket" class="form-control"><?php echo $this->db->query("SELECT alamat_lengkap FROM pegawai WHERE id_pegawai = $id")->row()->alamat_lengkap; ?></textarea>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class=" row ml-2">
+                                                <div class="col-md-10">
+
+                                                    <div class="form-group">
+                                                        <label>Foto</label><br>
+                                                        <input type="file" class="form-control" id="foto_pegawai" name="foto_pegawai">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row ml-2 mt-3 mb-5">
+                                                <div class="col-md-10">
+                                                    <div class="d-flex justify-content-end">
+                                                        <button class="btn btn-success">Simpan</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
+
+
                                     </div>
-                                    <div class="col-md-6">
-                                        <input type="text" name="id_transaksi" size="" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
-                                    </div>
+
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label>Nama</label>
-                                <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
-                            </div>
+
                         </div>
                     </div>
+
+
+
+
+
+
+
                 </div>
         </div>
 

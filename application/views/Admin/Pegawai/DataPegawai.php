@@ -79,7 +79,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-pencil"></i>
                                 <p>
                                     Pemasukan
@@ -88,7 +88,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-laptop"></i>
                                 <p>
                                     Pengeluaran
@@ -98,7 +98,7 @@
 
                         <li class="nav-header">CEK DATA</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Pemasukan
@@ -106,7 +106,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Pengeluaran
@@ -114,7 +114,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/kasbesar" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/kasbesar" class="nav-link active">
                                 <i class="nav-icon fa fa-fw fa-money"></i>
                                 <p>
                                     Kas Besar
@@ -122,7 +122,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/kaskecil" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/kaskecil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-book"></i>
                                 <p>
                                     Kas Kecil
@@ -132,7 +132,7 @@
 
                         <li class="nav-header">REKENING</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/tambahrekening" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Rekening
@@ -140,7 +140,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datarekening" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Rekening
@@ -150,7 +150,7 @@
 
                         <li class="nav-header">MUZAKKI</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/tambahmuzakki" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Muzakki
@@ -158,7 +158,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datamuzakki" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Muzakki
@@ -168,7 +168,7 @@
 
                         <li class="nav-header">PEGAWAI</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/TambahPegawai" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Pegawai
@@ -176,7 +176,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link active">
+                            <a href="<?= base_url('') ?>beranda/datapegawai" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Pegawai
@@ -184,9 +184,19 @@
                             </a>
                         </li>
 
+                        <li class="nav-header">RECORD INPUT DATA</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>beranda/histori" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-user"></i>
+                                <p>
+                                    Histori
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/profil" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/profil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-user"></i>
                                 <p>
                                     Profil
@@ -195,7 +205,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>/home/logout" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
                                 <p>
                                     Logout
@@ -227,7 +237,7 @@
             <section class="content">
                 <div class="row">
                     <div class="col-12">
-
+                        <?= $this->session->flashdata('message') ?>
                         <div class="card">
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -241,6 +251,7 @@
                                             <th>Password</th>
                                             <th>Level/Jabatan</th>
                                             <th>Aktif</th>
+                                            <th>#</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -260,19 +271,13 @@
                                                 <td><?php echo $key['password'] ?></td>
                                                 <td><?php echo $key['level'] ?></td>
                                                 <td><?php echo $key['is_aktif'] ?></td>
+                                                <td><a href="<?= base_url('') ?>beranda/edit_pegawai?id=<?php echo $key['id_pegawai'] ?>" class="btn btn-primary btn-block" role="button">Edit</a><a href="<?= base_url('') ?>QueryLazismu/hapus_pegawai?id=<?php echo $key['id_pegawai'] ?>" class="btn btn-primary btn-block" role="button">Hapus</a></td>
                                             </tr>
                                         <?php
                                         }
                                         ?>
                                     </tbody>
                                 </table>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <div class="input-grup">
-                                            <a href="<?= base_url('') ?>home/pemasukan_xls">Export to excel</a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <!-- /.card-body -->
                         </div>

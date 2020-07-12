@@ -239,9 +239,10 @@
                     <div class="card card-default">
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <?= $this->session->flashdata('message') ?>
-                            <?php echo form_open_multipart('querylazismu/tambah_rekening') ?>
-                            <form action="<?= base_url('') ?>querylazismu/tambah_rekening" method="post">
+                            <?= $this->session->flashdata('message');
+                            $id = $_GET['id']; ?>
+                            <?php echo form_open_multipart('querylazismu/edit_rekening') ?>
+                            <form action="<?= base_url('') ?>querylazismu/edit_rekening" method="post">
                                 <div class="form-group">
                                     <label>ID Rekening</label>
                                     <?php
@@ -251,31 +252,20 @@
                                     $qy2 = mysqli_query($koneksi, $qy);
                                     $row = mysqli_fetch_assoc($qy2);
                                     ?>
-                                    <input type="text" class="form-control" value="<?php
-                                                                                    if ($row['id_rekening'] == NULL) {
-                                                                                        echo 301;
-                                                                                    } else {
-                                                                                        echo $row['id_rekening'] + 1;
-                                                                                    }
-
-                                                                                    ?>" disabled>
-                                    <input type="text" name="id_rekening" id="id_rekening" class="form-control" value="<?php if ($row['id_rekening'] == NULL) {
-                                                                                                                            echo 301;
-                                                                                                                        } else {
-                                                                                                                            echo $row['id_rekening'] + 1;
-                                                                                                                        } ?>" hidden>
+                                    <input type="text" class="form-control" value="<?php echo $this->db->query("SELECT id_rekening FROM rekening WHERE id_rekening = $id")->row()->id_rekening ?>" disabled>
+                                    <input type="text" name="id_rekening" id="id_rekening" class="form-control" value="<?php echo $this->db->query("SELECT id_rekening FROM rekening WHERE id_rekening = $id")->row()->id_rekening ?>" hidden>
                                 </div>
                                 <div class="form-group">
                                     <label>Nama Bank</label>
-                                    <input type="text" name="nama_bank" id="nama_bank" class="form-control" placeholder="Masukan ID transaksi...">
+                                    <input type="text" name="nama_bank" id="nama_bank" class="form-control" placeholder="Masukan ID transaksi..." value="<?php echo $this->db->query("SELECT nama_bank FROM rekening WHERE id_rekening = $id")->row()->nama_bank ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Nomor Rekening</label>
-                                    <input type="text" name="nomor_rekening" id="nomor_rekening" class="form-control" placeholder="Masukan ID transaksi...">
+                                    <input type="text" name="nomor_rekening" id="nomor_rekening" class="form-control" placeholder="Masukan ID transaksi..." value="<?php echo $this->db->query("SELECT nomor_rekening FROM rekening WHERE id_rekening = $id")->row()->nomor_rekening ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Gambar</label><br>
-                                    <input type="file" class="form-control" id="foto_rekening" name="foto_rekening">
+                                    <input type="file" class="form-control" id="foto_rekening" name="foto_rekening" value="<?php echo $this->db->query("SELECT foto_rekening FROM rekening WHERE id_rekening = $id")->row()->foto_rekening ?>">
                                     <br>
                                 </div>
                                 <div class="input-grup mb-3"></div>

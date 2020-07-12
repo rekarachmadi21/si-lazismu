@@ -69,7 +69,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>" class="nav-link active">
+                            <a href="<?= base_url('') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -78,7 +78,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-pencil"></i>
                                 <p>
                                     Pemasukan
@@ -87,7 +87,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-laptop"></i>
                                 <p>
                                     Pengeluaran
@@ -97,7 +97,7 @@
 
                         <li class="nav-header">CEK DATA</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Pemasukan
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Pengeluaran
@@ -113,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/kasbesar" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/kasbesar" class="nav-link active">
                                 <i class="nav-icon fa fa-fw fa-money"></i>
                                 <p>
                                     Kas Besar
@@ -121,7 +121,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/kaskecil" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/kaskecil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-book"></i>
                                 <p>
                                     Kas Kecil
@@ -131,7 +131,7 @@
 
                         <li class="nav-header">REKENING</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/tambahrekening" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Rekening
@@ -139,7 +139,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datarekening" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Rekening
@@ -149,7 +149,7 @@
 
                         <li class="nav-header">MUZAKKI</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/tambahmuzakki" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Muzakki
@@ -157,7 +157,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datamuzakki" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Muzakki
@@ -167,7 +167,7 @@
 
                         <li class="nav-header">PEGAWAI</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/TambahPegawai" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Pegawai
@@ -175,7 +175,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapegawai" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Pegawai
@@ -183,9 +183,19 @@
                             </a>
                         </li>
 
+                        <li class="nav-header">RECORD INPUT DATA</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>beranda/histori" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-user"></i>
+                                <p>
+                                    Histori
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/profil" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/profil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-user"></i>
                                 <p>
                                     Profil
@@ -194,7 +204,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>/home/logout" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
                                 <p>
                                     Logout
@@ -221,7 +231,16 @@
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
+            <?php
+            $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+            $data = "SELECT * FROM pengeluaran";
+            $query = mysqli_query($koneksi, $data);
+            $pengeluaran = 0;
+            foreach ($query as $key) {
+                $pengeluaran = $pengeluaran + $key['nominal'];
+            }
 
+            ?>
             <!-- Main content -->
             <section class="content">
                 <!-- Small boxes (Stat box) -->
@@ -231,7 +250,7 @@
                         <div class="small-box bg-info">
                             <div class="inner">
                                 <?php
-                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+
 
                                 $data = "SELECT * FROM transaksi";
                                 $query = mysqli_query($koneksi, $data);
@@ -241,7 +260,7 @@
                                 }
 
                                 ?>
-                                <h3><?php echo "Rp. " . $pemasukan; ?></h3>
+                                <h4><?php echo "Rp. " . ($pemasukan - $pengeluaran); ?></h4>
                                 <p>Pemasukan</p>
                             </div>
                             <div class="icon">
@@ -255,16 +274,8 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <?php
-                                $data = "SELECT * FROM pengeluaran";
-                                $query = mysqli_query($koneksi, $data);
-                                $pengeluaran = 0;
-                                foreach ($query as $key) {
-                                    $pengeluaran = $pengeluaran + $key['nominal'];
-                                }
 
-                                ?>
-                                <h3><?php echo "Rp. " . $pengeluaran; ?></h3>
+                                <h4><?php echo "Rp. " . $pengeluaran; ?></h4>
                                 <p>Pengeluaran</p>
                             </div>
                             <div class="icon">
@@ -278,7 +289,16 @@
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>44</h3>
+                                <?php
+                                $data = "SELECT * FROM pengeluaran WHERE id_jenis_pengeluaran = 201";
+                                $query = mysqli_query($koneksi, $data);
+                                $pengeluaran = 0;
+                                foreach ($query as $key) {
+                                    $pengeluaran = $pengeluaran + $key['nominal'];
+                                }
+
+                                ?>
+                                <h4><?php echo "Rp. " . $pengeluaran; ?></h4>
 
                                 <p>Kas Kecil</p>
                             </div>
@@ -293,7 +313,16 @@
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h3>65</h3>
+                                <?php
+                                $data = "SELECT * FROM pengeluaran WHERE id_jenis_pengeluaran = 202";
+                                $query = mysqli_query($koneksi, $data);
+                                $pengeluaran = 0;
+                                foreach ($query as $key) {
+                                    $pengeluaran = $pengeluaran + $key['nominal'];
+                                }
+
+                                ?>
+                                <h4><?php echo "Rp. " . $pengeluaran; ?></h4>
 
                                 <p>Kas Besar</p>
                             </div>

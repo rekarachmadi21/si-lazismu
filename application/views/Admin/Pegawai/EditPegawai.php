@@ -239,63 +239,53 @@
                     <div class="card card-default">
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <?= $this->session->flashdata('message') ?>
-                            <?php echo form_open_multipart('querylazismu/tambah_rekening') ?>
-                            <form action="<?= base_url('') ?>querylazismu/tambah_rekening" method="post">
+                            <?= $this->session->flashdata('message');
+                            $id = $_GET['id'];
+                            ?>
+                            <form action="<?= base_url('') ?>querylazismu/edit_pegawai" method="post">
                                 <div class="form-group">
-                                    <label>ID Rekening</label>
-                                    <?php
-                                    $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+                                    <label>ID Pegawai</label>
+                                    <input type="text" class="form-control" value="<?php echo $this->db->query("SELECT id_pegawai FROM pegawai WHERE id_pegawai = $id")->row()->id_pegawai; ?>" disabled>
+                                    <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" value="<?php echo $this->db->query("SELECT id_pegawai FROM pegawai WHERE id_pegawai = $id")->row()->id_pegawai; ?>" hidden>
+                                </div>
+                                <div class="form-group">
+                                    <label>Nama Pegawai</label>
+                                    <input type="text" name="nama_pegawai" id="nama_pegawai" class="form-control" placeholder="Masukan Username" value="<?php echo $this->db->query("SELECT nama_pegawai FROM pegawai WHERE id_pegawai = $id")->row()->nama_pegawai; ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Username</label>
+                                    <input type="text" name="username" id="username" class="form-control" placeholder="Masukan Username" value="<?php echo $this->db->query("SELECT username FROM pegawai WHERE id_pegawai = $id")->row()->username; ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" name="email" id="email" class="form-control" placeholder="Masukan Email" value="<?php echo $this->db->query("SELECT email FROM pegawai WHERE id_pegawai = $id")->row()->email; ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="text" name="password" id="password" class="form-control" placeholder="Masukan Password">
+                                </div>
+                                <div class="form-group">
+                                    <label>Level</label>
+                                    <select name="level" id="level" class="custom-select">
+                                        <option value="1">Admin</option>
+                                        <option value="2">Karyawan</option>
+                                    </select>
+                                </div>
 
-                                    $qy = "SELECT * FROM rekening ORDER BY id_rekening DESC LIMIT 1";
-                                    $qy2 = mysqli_query($koneksi, $qy);
-                                    $row = mysqli_fetch_assoc($qy2);
-                                    ?>
-                                    <input type="text" class="form-control" value="<?php
-                                                                                    if ($row['id_rekening'] == NULL) {
-                                                                                        echo 301;
-                                                                                    } else {
-                                                                                        echo $row['id_rekening'] + 1;
-                                                                                    }
-
-                                                                                    ?>" disabled>
-                                    <input type="text" name="id_rekening" id="id_rekening" class="form-control" value="<?php if ($row['id_rekening'] == NULL) {
-                                                                                                                            echo 301;
-                                                                                                                        } else {
-                                                                                                                            echo $row['id_rekening'] + 1;
-                                                                                                                        } ?>" hidden>
-                                </div>
-                                <div class="form-group">
-                                    <label>Nama Bank</label>
-                                    <input type="text" name="nama_bank" id="nama_bank" class="form-control" placeholder="Masukan ID transaksi...">
-                                </div>
-                                <div class="form-group">
-                                    <label>Nomor Rekening</label>
-                                    <input type="text" name="nomor_rekening" id="nomor_rekening" class="form-control" placeholder="Masukan ID transaksi...">
-                                </div>
-                                <div class="form-group">
-                                    <label>Gambar</label><br>
-                                    <input type="file" class="form-control" id="foto_rekening" name="foto_rekening">
-                                    <br>
-                                </div>
                                 <div class="input-grup mb-3"></div>
                                 <div class="input-grup">
-
                                     <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                                     <!-- /.col -->
-
                                 </div>
 
+                            </form>
                         </div>
-                        </form>
-                        <?php echo form_close() ?>
                     </div>
                 </div>
+            </section>
+
+
         </div>
-        </section>
-
-
-    </div>
     </div>
 
     <!-- jQuery -->

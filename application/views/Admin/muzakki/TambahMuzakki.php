@@ -78,7 +78,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-pencil"></i>
                                 <p>
                                     Pemasukan
@@ -87,7 +87,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-laptop"></i>
                                 <p>
                                     Pengeluaran
@@ -97,7 +97,7 @@
 
                         <li class="nav-header">CEK DATA</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Pemasukan
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Pengeluaran
@@ -113,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/kasbesar" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/kasbesar" class="nav-link active">
                                 <i class="nav-icon fa fa-fw fa-money"></i>
                                 <p>
                                     Kas Besar
@@ -121,7 +121,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/kaskecil" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/kaskecil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-book"></i>
                                 <p>
                                     Kas Kecil
@@ -131,7 +131,7 @@
 
                         <li class="nav-header">REKENING</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/tambahrekening" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Rekening
@@ -139,7 +139,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datarekening" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Rekening
@@ -149,7 +149,7 @@
 
                         <li class="nav-header">MUZAKKI</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link active">
+                            <a href="<?= base_url('') ?>beranda/tambahmuzakki" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Muzakki
@@ -157,7 +157,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datamuzakki" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Muzakki
@@ -167,7 +167,7 @@
 
                         <li class="nav-header">PEGAWAI</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/TambahPegawai" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Pegawai
@@ -175,7 +175,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapegawai" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Pegawai
@@ -183,9 +183,19 @@
                             </a>
                         </li>
 
+                        <li class="nav-header">RECORD INPUT DATA</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>beranda/histori" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-user"></i>
+                                <p>
+                                    Histori
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/profil" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/profil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-user"></i>
                                 <p>
                                     Profil
@@ -194,7 +204,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>/home/logout" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
                                 <p>
                                     Logout
@@ -229,78 +239,68 @@
                     <div class="card card-default">
                         <!-- /.card-header -->
                         <div class="card-body">
-
-                            <form action="<?= base_url('') ?>querylazismu/tambah_pemasukan" method="post">
+                            <?= $this->session->flashdata('message') ?>
+                            <form action="<?= base_url('') ?>querylazismu/tambah_muzakki" method="post">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>ID Muzzaki</label>
-                                            <input type="text" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" disabled>
-                                            <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" hidden>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>ID Golongan</label>
-                                            <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
+                                            <?php
+                                            $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+
+                                            $qy = "SELECT * FROM muzakki ORDER BY id_muzakki DESC LIMIT 1";
+                                            $qy2 = mysqli_query($koneksi, $qy);
+                                            $row = mysqli_fetch_assoc($qy2);
+                                            ?>
+                                            <input type="text" class="form-control" value="<?php if ($row['id_muzakki'] == NULL) {
+                                                                                                echo 1;
+                                                                                            } else {
+                                                                                                echo $row['id_muzakki'] + 1;
+                                                                                            } ?>" disabled>
+                                            <input type="text" name="id_muzakki" id="id_muzakki" class="form-control" value="<?php if ($row['id_muzakki'] == NULL) {
+                                                                                                                                    echo 1;
+                                                                                                                                } else {
+                                                                                                                                    echo $row['id_muzakki'] + 1;
+                                                                                                                                } ?>" hidden>
                                         </div>
                                         <div class="form-group">
                                             <label>Nama Muzzaki</label>
-                                            <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
+                                            <input type="text" name="nama_muzakki" id="nama_muzakki" class="form-control" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID Golongan</label>
+                                            <select class="form-control select2bs4" id="id_golongan" name="id_golongan">
+                                                <?php
+                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+                                                $data = "SELECT * FROM golongan";
+                                                $query = mysqli_query($koneksi, $data);
+
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value=" <?php echo $key['id_golongan'] ?>"><?php echo $key['id_golongan'] . " - " . $key['nama_golongan'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Nomor Telepon Muzzaki</label>
-                                            <select class="form-control select2bs4" id="jenis_transaksi" name="jenis_transaksi" style="width: 100%;">
-                                                <?php
-                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
-                                                $data = "SELECT * FROM jenis_transaksi";
-                                                $query = mysqli_query($koneksi, $data);
-
-                                                foreach ($query as $key) {
-                                                ?>
-                                                    <option value="<?php echo $key['id_jenis_transaksi'] ?>"><?php echo $key['id_jenis_transaksi'] . " - " . $key['jenis_transaksi'] ?></option>
-                                                <?php
-                                                }
-                                                ?>
-                                            </select>
+                                            <input type="text" name="notelp_muzakki" id="notelp_muzakki" class="form-control" placeholder="">
                                         </div>
                                         <div class="form-group">
                                             <label>NPWP</label>
-                                            <select class="form-control select2bs4" id="id_muzakki" name="id_muzakki" style="width: 100%;">
-                                                <?php
-
-                                                $data = "SELECT * FROM muzakki";
-                                                $query = mysqli_query($koneksi, $data);
-
-                                                foreach ($query as $key) {
-                                                ?>
-                                                    <option value="<?php echo $key['id_muzakki'] ?>"><?php echo $key['id_muzakki'] . " - " . $key['nama_muzakki'] ?></option>
-                                                <?php
-                                                }
-                                                ?>
-                                            </select>
+                                            <input type="text" name="npwp" id="npwp" class="form-control" placeholder="">
                                         </div>
                                         <div class="form-group">
                                             <label>NPWZ</label>
-                                            <select class="form-control select2bs4" id="id_rekening" name="id_rekening" style="width: 100%;">
-                                                <?php
-                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
-
-                                                $data = "SELECT * FROM rekening";
-                                                $query = mysqli_query($koneksi, $data);
-
-                                                foreach ($query as $key) {
-                                                ?>
-                                                    <option value="<?php echo $key['id_rekening'] ?>"><?php echo $key['id_rekening'] . " - " . $key['nama_bank'] ?></option>
-                                                <?php
-                                                }
-                                                ?>
-                                            </select>
+                                            <input type="text" name="npwz" id="npwz" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
 
                                         <div class="form-group">
                                             <label>Alamat</label>
-                                            <textarea type="text" rows="4" name="ket" id="ket" class="form-control" placeholder="Keterangan..."></textarea>
+                                            <textarea type="text" rows="4" name="alamat_muzakki" id="alamat_muzakki" class="form-control" placeholder=""></textarea>
                                         </div>
                                     </div>
                                 </div>

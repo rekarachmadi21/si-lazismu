@@ -1,5 +1,6 @@
 <!-- /.login-logo -->
 <div class="card">
+
     <div class="card-body login-card-body">
         <?= $this->session->flashdata('message') ?>
         <form action="<?= base_url('') ?>auth" method="post">

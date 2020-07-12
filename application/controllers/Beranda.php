@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class Beranda extends CI_Controller
 {
     public function __construct()
     {
@@ -11,13 +11,14 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Dashboard";
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        $data['title'] = "Dashboard";
         if ($data['pegawai']['level'] == 1) {
             $this->load->view('Admin/dashboard', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/dashboard', $data);
-        } else {
+        }
+        else {
             redirect('auth');
         }
     }
@@ -35,7 +36,8 @@ class Home extends CI_Controller
             }
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pemasukan/Pemasukan', $data);
-        } else {
+        }
+        else {
             redirect('auth');
         }
     }
@@ -48,7 +50,8 @@ class Home extends CI_Controller
             $this->load->view('Admin/Pengeluaran/Pengeluaran', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pengeluaran/Pengeluaran', $data);
-        } else {
+        }
+        else {
             redirect('auth');
         }
     }
@@ -61,7 +64,8 @@ class Home extends CI_Controller
             $this->load->view('Admin/Pemasukan/DataPemasukan', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pemasukan/DataPemasukan', $data);
-        } else {
+        }
+        else {
             redirect('auth');
         }
     }
@@ -75,7 +79,8 @@ class Home extends CI_Controller
             $this->load->view('Admin/Pengeluaran/DataPengeluaran', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pengeluaran/DataPengeluaran', $data);
-        } else {
+        }
+        else {
             redirect('auth');
         }
     }
@@ -88,7 +93,8 @@ class Home extends CI_Controller
             $this->load->view('Admin/Pengeluaran/KasBesar', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pengeluaran/KasBesar', $data);
-        } else {
+        }
+        else {
             redirect('auth');
         }
     }
@@ -101,7 +107,8 @@ class Home extends CI_Controller
             $this->load->view('Admin/Pengeluaran/KasKecil', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pengeluaran/KasKecil', $data);
-        } else {
+        }
+        else {
             redirect('auth');
         }
     }
@@ -115,7 +122,8 @@ class Home extends CI_Controller
             $this->load->view('Admin/Rekening/Rekening', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Rekening/Rekening', $data);
-        } else {
+        }
+        else {
             redirect('auth');
         }
     }
@@ -128,7 +136,8 @@ class Home extends CI_Controller
             $this->load->view('Admin/Rekening/DataRekening', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pengeluaran/DataRekening', $data);
-        } else {
+        }
+        else {
             redirect('auth');
         }
     }
@@ -143,7 +152,8 @@ class Home extends CI_Controller
             $this->load->view('Admin/Muzakki/TambahMuzakki', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Muzakki/TambahMuzakki', $data);
-        } else {
+        }
+        else {
             redirect('auth');
         }
     }
@@ -156,7 +166,8 @@ class Home extends CI_Controller
             $this->load->view('Admin/Muzakki/DataMuzakki', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Muzakki/DataMuzakki', $data);
-        } else {
+        }
+        else {
             redirect('auth');
         }
     }
@@ -193,6 +204,20 @@ class Home extends CI_Controller
         $this->load->view('export-excel/pengeluaran-xls');
     }
 
+    public function Histori()
+    {
+        $data['title'] = "Profil";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/Histori/histori', $data);
+        } else if ($data['pegawai']['level'] == 2) {
+            $this->load->view('Karyawan/Histori/histori', $data);
+        }
+        else {
+            redirect('auth');
+        }
+    }
+
     public function Profil()
     {
         $data['title'] = "Profil";
@@ -201,7 +226,8 @@ class Home extends CI_Controller
             $this->load->view('Admin/Profil', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Profil', $data);
-        } else {
+        }
+        else {
             redirect('auth');
         }
     }
@@ -211,5 +237,77 @@ class Home extends CI_Controller
         $this->session->unset_userdata('email');
         $this->session->set_flashdata('message', '<div class="form-group"> <div class="alert-success" role="alert"><center>Kamu telah keluar!</center></div></div>');
         redirect('auth');
+    }
+
+
+    function edit_pemasukan()
+    {
+        $data['title'] = "Edit Pemasukan";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/Pemasukan/EditPemasukan', $data);
+        } else {
+            redirect('auth');
+        }
+    }
+
+    function edit_pengeluaran()
+    {
+        $data['title'] = "Edit Pengeluaran";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/Pengeluaran/EditPengeluaran', $data);
+        } else {
+            redirect('auth');
+        }
+    }
+
+    function edit_pegawai()
+    {
+        $data['title'] = "Edit Pegawai";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/Pegawai/EditPegawai', $data);
+        } else {
+            redirect('auth');
+        }
+    }
+
+    function edit_muzakki()
+    {
+        $data['title'] = "Edit Pemasukan";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/muzakki/editmuzakki', $data);
+        } else {
+            redirect('auth');
+        }
+    }
+
+    function edit_rekening()
+    {
+        $data['title'] = "Edit Rekening";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/Rekening/EditRekening', $data);
+        } else if ($data['pegawai']['level'] == 2) {
+            $this->load->view('Karyawan/Rekening/EditRekening', $data);
+        }
+        else {
+            redirect('auth');
+        }
+    }
+    function edit_profil()
+    {
+        $data['title'] = "Edit Profil";
+        $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        if ($data['pegawai']['level'] == 1) {
+            $this->load->view('Admin/edit_profil', $data);
+        } else if ($data['pegawai']['level'] == 2) {
+            $this->load->view('Karyawan/edit_profil', $data);
+        }
+        else {
+            redirect('auth');
+        }
     }
 }

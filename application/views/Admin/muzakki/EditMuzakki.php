@@ -240,55 +240,66 @@
                         <!-- /.card-header -->
                         <div class="card-body">
                             <?= $this->session->flashdata('message') ?>
-                            <?php echo form_open_multipart('querylazismu/tambah_rekening') ?>
-                            <form action="<?= base_url('') ?>querylazismu/tambah_rekening" method="post">
-                                <div class="form-group">
-                                    <label>ID Rekening</label>
-                                    <?php
-                                    $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+                            <form action="<?= base_url('') ?>querylazismu/edit_muzakki" method="post">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>ID Muzzaki</label>
+                                            <?php
+                                            $id = $_GET['id'];
+                                            ?>
+                                            <input type="text" class="form-control" value="<?php echo $this->db->query("SELECT id_muzakki FROM muzakki WHERE id_muzakki = $id")->row()->id_muzakki ?>" disabled>
+                                            <input type="text" name="id_muzakki" id="id_muzakki" class="form-control" value="<?php echo $this->db->query("SELECT id_muzakki FROM muzakki WHERE id_muzakki = $id")->row()->id_muzakki ?>" hidden>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nama Muzzaki</label>
+                                            <input type="text" name="nama_muzakki" id="nama_muzakki" class="form-control" value="<?php echo $this->db->query("SELECT nama_muzakki FROM muzakki WHERE id_muzakki = $id")->row()->nama_muzakki ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID Golongan</label>
+                                            <select class="form-control select2bs4" id="id_golongan" name="id_golongan">
+                                                <?php
+                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+                                                $data = "SELECT * FROM golongan";
+                                                $query = mysqli_query($koneksi, $data);
 
-                                    $qy = "SELECT * FROM rekening ORDER BY id_rekening DESC LIMIT 1";
-                                    $qy2 = mysqli_query($koneksi, $qy);
-                                    $row = mysqli_fetch_assoc($qy2);
-                                    ?>
-                                    <input type="text" class="form-control" value="<?php
-                                                                                    if ($row['id_rekening'] == NULL) {
-                                                                                        echo 301;
-                                                                                    } else {
-                                                                                        echo $row['id_rekening'] + 1;
-                                                                                    }
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value=" <?php echo $key['id_golongan'] ?>"><?php echo $key['id_golongan'] . " - " . $key['nama_golongan'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nomor Telepon Muzzaki</label>
+                                            <input type="text" name="notelp_muzakki" id="notelp_muzakki" class="form-control" value="<?php echo $this->db->query("SELECT notelp_muzakki FROM muzakki WHERE id_muzakki = $id")->row()->notelp_muzakki ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>NPWP</label>
+                                            <input type="text" name="npwp" id="npwp" class="form-control" value="<?php echo $this->db->query("SELECT npwp FROM muzakki WHERE id_muzakki = $id")->row()->npwp ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>NPWZ</label>
+                                            <input type="text" name="npwz" id="npwz" class="form-control" value="<?php echo $this->db->query("SELECT npwz FROM muzakki WHERE id_muzakki = $id")->row()->npwz ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
 
-                                                                                    ?>" disabled>
-                                    <input type="text" name="id_rekening" id="id_rekening" class="form-control" value="<?php if ($row['id_rekening'] == NULL) {
-                                                                                                                            echo 301;
-                                                                                                                        } else {
-                                                                                                                            echo $row['id_rekening'] + 1;
-                                                                                                                        } ?>" hidden>
-                                </div>
-                                <div class="form-group">
-                                    <label>Nama Bank</label>
-                                    <input type="text" name="nama_bank" id="nama_bank" class="form-control" placeholder="Masukan ID transaksi...">
-                                </div>
-                                <div class="form-group">
-                                    <label>Nomor Rekening</label>
-                                    <input type="text" name="nomor_rekening" id="nomor_rekening" class="form-control" placeholder="Masukan ID transaksi...">
-                                </div>
-                                <div class="form-group">
-                                    <label>Gambar</label><br>
-                                    <input type="file" class="form-control" id="foto_rekening" name="foto_rekening">
-                                    <br>
+                                        <div class="form-group">
+                                            <label>Alamat</label>
+                                            <textarea type="text" rows="4" name="alamat_muzakki" id="alamat_muzakki" class="form-control" placeholder=""><?php echo $this->db->query("SELECT alamat_muzakki FROM muzakki WHERE id_muzakki = $id")->row()->alamat_muzakki ?></textarea>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="input-grup mb-3"></div>
                                 <div class="input-grup">
-
                                     <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                                     <!-- /.col -->
-
                                 </div>
 
                         </div>
                         </form>
-                        <?php echo form_close() ?>
                     </div>
                 </div>
         </div>

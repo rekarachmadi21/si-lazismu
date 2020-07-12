@@ -1,11 +1,12 @@
 <!-- /.login-logo -->
 <div class="card">
     <div class="card-body login-card-body">
-        <p class="login-box-msg">Lupa Akun</p>
+        <p class="login-box-msg">Masukan NIK</p>
         <?= $this->session->flashdata('message') ?>
-        <form action="<?= base_url('') ?>auth/cek_akun" method="post">
+        <form action="<?= base_url('') ?>auth/ganti_akun" method="post">
             <div class="input-group mb-3">
-                <input type="email" name="email" class="form-control">
+                <input type="text" name="email" class="form-control" value="<?php echo $email ?>" hidden>
+                <input type="text" name="nik_pegawai" class="form-control" placeholder="">
                 <div class="input-group-append">
                     <div class="input-group-text">
 

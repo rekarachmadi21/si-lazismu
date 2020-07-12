@@ -52,7 +52,7 @@
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <img src="<?= base_url('') ?>assets/dist/img/lazismu.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Lazismu</span> </a> <!-- Sidebar -->
+                <span class="brand-text font-weight-light">Lazisnmu</span> </a> <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -225,26 +225,138 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
+
+
+
+
+
+                    <?php
+                    $email = $this->session->userdata('email');
+                    ?>
                     <!-- SELECT2 EXAMPLE -->
                     <div class="card card-default">
                         <!-- /.card-header -->
                         <div class="card-body">
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-1">
-                                        <tex>ID</tex>
+                                    <div class="col-md-3 pt-4 pl-5">
+                                        <img class="image border border-light shadow p-2" src="<?= base_url('') ?>uploads/user/<?php echo $this->db->query("SELECT foto_pegawai FROM pegawai WHERE email = '$email'")->row()->foto_pegawai; ?>" alt="Foto User" style="height: 13vw; width: 12vw;">
                                     </div>
-                                    <div class="col-md-6">
-                                        <input type="text" name="id_transaksi" size="" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
+
+                                    <div class="col-md-8 border shadow mt-4 ml-4">
+                                        <div class="row">
+                                            <div class="col-md-3 mt-2 ml-2">
+                                                <div>Nomor Karyawan</div>
+                                            </div>
+                                            <div class="col-md-1 pl-0 pr-0 ml-0 ml-0 mt-2 ml-2">
+                                                <div>:</div>
+                                            </div>
+                                            <div class="col-md-7 mt-2 ml-0">
+                                                <div><?php echo $this->db->query("SELECT id_pegawai FROM pegawai WHERE email = '$email'")->row()->id_pegawai; ?></div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-3 mt-2 ml-2">
+                                                <div>NIK</div>
+                                            </div>
+                                            <div class="col-md-1 pl-0 pr-0 ml-0 ml-0 mt-2 ml-2">
+                                                <div>:</div>
+                                            </div>
+                                            <div class="col-md-7 mt-2 ml-0">
+                                                <div><?php echo $this->db->query("SELECT NIK_pegawai FROM pegawai WHERE email = '$email'")->row()->NIK_pegawai; ?></div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-3 mt-2 ml-2">
+                                                <div>Email</div>
+                                            </div>
+                                            <div class="col-md-1 pl-0 pr-0 ml-0 ml-0 mt-2 ml-2">
+                                                <div>:</div>
+                                            </div>
+                                            <div class="col-md-7 mt-2 ml-0">
+                                                <div><?php echo $this->db->query("SELECT email FROM pegawai WHERE email = '$email'")->row()->email; ?></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-3 mt-2 ml-2">
+                                                <div>Nama Lengkap</div>
+                                            </div>
+                                            <div class="col-md-1 pl-0 pr-0 ml-0 ml-0 mt-2 ml-2">
+                                                <div>:</div>
+                                            </div>
+                                            <div class="col-md-7 mt-2 ml-0">
+                                                <div><?php echo $this->db->query("SELECT nama_pegawai FROM pegawai WHERE email = '$email'")->row()->nama_pegawai; ?></div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-3 mt-2 ml-2">
+                                                <div>Tanggal Lahir</div>
+                                            </div>
+                                            <div class="col-md-1 pl-0 pr-0 ml-0 ml-0 mt-2 ml-2">
+                                                <div>:</div>
+                                            </div>
+                                            <div class="col-md-7 mt-2 ml-0">
+                                                <div><?php echo $this->db->query("SELECT tanggal_lahir FROM pegawai WHERE email = '$email'")->row()->tanggal_lahir; ?></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-3 mt-2 ml-2">
+                                                <div>Alamat</div>
+                                            </div>
+                                            <div class="col-md-1 pl-0 pr-0 ml-0 ml-0 mt-2 ml-2">
+                                                <div>:</div>
+                                            </div>
+                                            <div class="col-md-7 mt-2 ml-0">
+                                                <div><?php echo $this->db->query("SELECT alamat_lengkap FROM pegawai WHERE email = '$email'")->row()->alamat_lengkap; ?></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-3 mt-2 ml-2">
+                                                <div>Jenis Kelamin</div>
+                                            </div>
+                                            <div class="col-md-1 pl-0 pr-0 ml-0 ml-0 mt-2 ml-2">
+                                                <div>:</div>
+                                            </div>
+                                            <div class="col-md-7 mt-2 ml-0">
+                                                <div><?php echo $this->db->query("SELECT jenis_kelamin FROM pegawai WHERE email = '$email'")->row()->jenis_kelamin; ?></div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-md-11 m-3 mb-3">
+
+                                                <div class="d-flex justify-content-end">
+                                                    <a class="btn btn-primary" href="<?= base_url('') ?>beranda/edit_profil?id=<?php echo $pegawai['id_pegawai'] ?>">Update Profil</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
                                     </div>
+
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label>Nama</label>
-                                <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan ID transaksi...">
-                            </div>
+
                         </div>
                     </div>
+
+
+
+
+
+
+
                 </div>
         </div>
 

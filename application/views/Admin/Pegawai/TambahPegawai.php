@@ -78,7 +78,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-pencil"></i>
                                 <p>
                                     Pemasukan
@@ -87,7 +87,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-laptop"></i>
                                 <p>
                                     Pengeluaran
@@ -97,7 +97,7 @@
 
                         <li class="nav-header">CEK DATA</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Pemasukan
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Pengeluaran
@@ -113,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/kasbesar" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/kasbesar" class="nav-link active">
                                 <i class="nav-icon fa fa-fw fa-money"></i>
                                 <p>
                                     Kas Besar
@@ -121,7 +121,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/kaskecil" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/kaskecil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-book"></i>
                                 <p>
                                     Kas Kecil
@@ -131,7 +131,7 @@
 
                         <li class="nav-header">REKENING</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/tambahrekening" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Rekening
@@ -139,7 +139,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datarekening" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Rekening
@@ -149,7 +149,7 @@
 
                         <li class="nav-header">MUZAKKI</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/tambahmuzakki" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Muzakki
@@ -157,7 +157,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datamuzakki" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Muzakki
@@ -167,7 +167,7 @@
 
                         <li class="nav-header">PEGAWAI</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link active">
+                            <a href="<?= base_url('') ?>beranda/TambahPegawai" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Pegawai
@@ -175,7 +175,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapegawai" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Pegawai
@@ -183,9 +183,19 @@
                             </a>
                         </li>
 
+                        <li class="nav-header">RECORD INPUT DATA</li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>beranda/histori" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-user"></i>
+                                <p>
+                                    Histori
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/profil" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/profil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-user"></i>
                                 <p>
                                     Profil
@@ -194,7 +204,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>/home/logout" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
                                 <p>
                                     Logout
@@ -229,33 +239,78 @@
                     <div class="card card-default">
                         <!-- /.card-header -->
                         <div class="card-body">
-
-                            <form action="<?= base_url('') ?>querylazismu/tambah_pemasukan" method="post">
-
+                            <?= $this->session->flashdata('message') ?>
+                            <form action="<?= base_url('') ?>querylazismu/tambah_pegawai" method="post">
                                 <div class="form-group">
-                                    <label>Username</label>
-                                    <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan Username">
+                                    <label>ID Pegawai</label>
+                                    <?php
+                                    $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+
+                                    $qy = "SELECT * FROM pegawai ORDER BY id_pegawai DESC LIMIT 1";
+                                    $qy2 = mysqli_query($koneksi, $qy);
+                                    $row = mysqli_fetch_assoc($qy2);
+                                    ?>
+                                    <input type="text" class="form-control" value="<?php
+                                                                                    if ($row['id_pegawai'] == NULL) {
+                                                                                        echo 1;
+                                                                                    } else {
+                                                                                        echo $row['id_pegawai'] + 1;
+                                                                                    }
+
+                                                                                    ?>" disabled>
+                                    <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" value="<?php if ($row['id_pegawai'] == NULL) {
+                                                                                                                            echo 1;
+                                                                                                                        } else {
+                                                                                                                            echo $row['id_pegawai'] + 1;
+                                                                                                                        } ?>" hidden>
+                                </div>
+                                <div class="form-group">
+                                    <label>NIK</label>
+                                    <input type="text" name="nik_pegawai" id="nik_pegawai" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Nama Pegawai</label>
+                                    <input type="text" name="nama_pegawai" id="nama_pegawai" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tanggal Lahir</label>
+                                    <input type="text" class="form-control" name="tanggal_lahir" id="tanggal_lahir" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy/mm/dd" placeholder="yyyy/mm/dd" data-mask>
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan Email">
+                                    <input type="email" name="email" id="email" class="form-control">
                                 </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan Password">
-                                </div>
-                                <div class="form-group">
-                                    <label>Konfirmasi Password</label>
-                                    <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" placeholder="Masukan Konfimasi Password">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="password" name="password" id="password" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Konfirmasi Password</label>
+                                            <input type="password" name="konfirmasi_password" id="konfirmasi_password" class="form-control">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Level</label>
-                                    <select name="opt" id="opt" class="custom-select">
+                                    <select name="level" id="level" class="custom-select">
                                         <option value="1">Admin</option>
                                         <option value="2">Karyawan</option>
                                     </select>
                                 </div>
 
+                                <div class="form-group">
+                                    <label>Alamat lengkap</label>
+                                    <textarea type="text" rows="4" name="alamat" id="ket" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Foto</label><br>
+                                    <input type="file" class="form-control" id="foto_pegawai" name="foto_pegawai">
+                                    <br>
+                                </div>
                                 <div class="input-grup mb-3"></div>
                                 <div class="input-grup">
                                     <button type="submit" class="btn btn-primary btn-block">Simpan</button>

@@ -240,55 +240,105 @@
                         <!-- /.card-header -->
                         <div class="card-body">
                             <?= $this->session->flashdata('message') ?>
-                            <?php echo form_open_multipart('querylazismu/tambah_rekening') ?>
-                            <form action="<?= base_url('') ?>querylazismu/tambah_rekening" method="post">
-                                <div class="form-group">
-                                    <label>ID Rekening</label>
-                                    <?php
-                                    $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+                            <form action="<?= base_url('') ?>querylazismu/edit_pemasukan" method="post">
+                                <?php $id = $_GET['id']; ?>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>ID Pegawai</label>
+                                            <input type="text" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" disabled>
+                                            <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" hidden>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID Transaksi</label>
+                                            <input type="text" name="id_transaksi" id="id_transaksi" class="form-control" value="<?php echo $this->db->query("SELECT id_transaksi FROM transaksi WHERE id_transaksi = $id")->row()->id_transaksi ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Jenis Transaksi</label>
+                                            <select class="form-control select2bs4" id="jenis_transaksi" name="jenis_transaksi" style="width: 100%;">
+                                                <?php
+                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+                                                $data = "SELECT * FROM jenis_transaksi ";
+                                                $query = mysqli_query($koneksi, $data);
 
-                                    $qy = "SELECT * FROM rekening ORDER BY id_rekening DESC LIMIT 1";
-                                    $qy2 = mysqli_query($koneksi, $qy);
-                                    $row = mysqli_fetch_assoc($qy2);
-                                    ?>
-                                    <input type="text" class="form-control" value="<?php
-                                                                                    if ($row['id_rekening'] == NULL) {
-                                                                                        echo 301;
-                                                                                    } else {
-                                                                                        echo $row['id_rekening'] + 1;
-                                                                                    }
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_jenis_transaksi'] ?>"><?php echo $key['id_jenis_transaksi'] . " - " . $key['jenis_transaksi'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID Muzakki</label>
+                                            <select class="form-control select2bs4" id="id_muzakki" name="id_muzakki" style="width: 100%;">
+                                                <?php
 
-                                                                                    ?>" disabled>
-                                    <input type="text" name="id_rekening" id="id_rekening" class="form-control" value="<?php if ($row['id_rekening'] == NULL) {
-                                                                                                                            echo 301;
-                                                                                                                        } else {
-                                                                                                                            echo $row['id_rekening'] + 1;
-                                                                                                                        } ?>" hidden>
-                                </div>
-                                <div class="form-group">
-                                    <label>Nama Bank</label>
-                                    <input type="text" name="nama_bank" id="nama_bank" class="form-control" placeholder="Masukan ID transaksi...">
-                                </div>
-                                <div class="form-group">
-                                    <label>Nomor Rekening</label>
-                                    <input type="text" name="nomor_rekening" id="nomor_rekening" class="form-control" placeholder="Masukan ID transaksi...">
-                                </div>
-                                <div class="form-group">
-                                    <label>Gambar</label><br>
-                                    <input type="file" class="form-control" id="foto_rekening" name="foto_rekening">
-                                    <br>
+                                                $data = "SELECT * FROM muzakki";
+                                                $query = mysqli_query($koneksi, $data);
+
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_muzakki'] ?>"><?php echo $key['id_muzakki'] . " - " . $key['nama_muzakki'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID Rekening</label>
+                                            <select class="form-control select2bs4" id="id_rekening" name="id_rekening" style="width: 100%;">
+                                                <?php
+                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+
+                                                $data = "SELECT * FROM rekening";
+                                                $query = mysqli_query($koneksi, $data);
+
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_rekening'] ?>"><?php echo $key['id_rekening'] . " - " . $key['nama_bank'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tanggal Transaksi</label>
+                                            <input type="text" class="form-control" name="tgl_transaksi" id="tgl_transaksi" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy/mm/dd" placeholder="2020/05/21" data-mask value="<?php echo $this->db->query("SELECT tgl_transaksi FROM transaksi WHERE id_transaksi = $id")->row()->tgl_transaksi; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <label>Jam Transaksi</label>
+                                            <input type="text" class="form-control" name="jam_transaksi" id="jam_transaksi" data-inputmask-alias="datetime" data-inputmask-inputFormat="HH:MM" placeholder="13:10" data-mask value="<?php echo $this->db->query("SELECT jam_transaksi FROM transaksi WHERE id_transaksi = $id")->row()->jam_transaksi; ?>">
+                                        </div>
+                                        <div class=" form-group">
+                                            <label>Nominal</label>
+                                            <input type="text" name="nominal" id="nominal" class="form-control" placeholder="Masukan Nominal..." value="<?php echo $this->db->query("SELECT nominal FROM transaksi WHERE id_transaksi = $id")->row()->nominal; ?>">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Option</label>
+                                            <select name="opt" id="opt" class="custom-select">
+                                                <option value="Terikat">Terikat</option>
+                                                <option value="Tidak Terikat">Tidak Terikat</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>keterangan</label>
+                                            <textarea type="text" rows="4" name="ket" id="ket" class="form-control" placeholder="Keterangan..."><?php echo $this->db->query("SELECT ket FROM transaksi WHERE id_transaksi = $id")->row()->ket; ?></textarea>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="input-grup mb-3"></div>
                                 <div class="input-grup">
-
                                     <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                                     <!-- /.col -->
-
                                 </div>
 
                         </div>
                         </form>
-                        <?php echo form_close() ?>
                     </div>
                 </div>
         </div>
