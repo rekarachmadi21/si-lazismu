@@ -247,12 +247,11 @@
                                             <th>ID Pegawai</th>
                                             <th>Nama Pegawai</th>
                                             <th>Email</th>
-                                            <th>Username</th>
                                             <th>Password</th>
                                             <th>Level/Jabatan</th>
                                             <th>Aktif</th>
                                             <th>#</th>
-                                        </tr>
+                                        </tr>   
                                     </thead>
                                     <tbody>
                                         <?php
@@ -267,7 +266,6 @@
                                                 <td><?php echo $key['id_pegawai'] ?></td>
                                                 <td><?php echo $key['nama_pegawai'] ?></td>
                                                 <td><?php echo $key['email'] ?></td>
-                                                <td><?php echo $key['username'] ?></td>
                                                 <td><?php echo $key['password'] ?></td>
                                                 <td><?php echo $key['level'] ?></td>
                                                 <td><?php echo $key['is_aktif'] ?></td>

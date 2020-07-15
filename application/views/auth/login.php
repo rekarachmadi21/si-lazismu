@@ -22,7 +22,7 @@
                 <!-- /.col -->
             </div>
         </form>
-        <center> <a href="<?= base_url('') ?>auth/lupa_akun">Lupa Akun </center>
+        <center> <a href="<?= base_url('auth/lupa_akun'); ?>">Lupa Akun </center>
     </div>
     <!-- /.login-card-body -->
 </div>

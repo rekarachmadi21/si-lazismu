@@ -194,7 +194,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>/home/logout" class="nav-link">
+                            <a href="<?= base_url('') ?>/home/logout" class="nzav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
                                 <p>
                                     Logout

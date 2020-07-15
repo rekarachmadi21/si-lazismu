@@ -169,21 +169,21 @@ class querylazismu extends CI_Controller
         $id_pegawai = $this->input->post('id_pegawai');
         $nama_pegawai = $this->input->post('nama_pegawai');
         $email = $this->input->post('email');
-        $username = $this->input->post('username');
+        // $username = $this->input->post('username');
         $password = $this->input->post('password');
         $konfirmasi_password = $this->input->post('konfirmasi_password');
         $level  = $this->input->post('level');
         $is_aktif = 1;
-        if ($nama_pegawai == null || $username == null || $email == null || $password == null || $konfirmasi_password == null) {
+        if ($nama_pegawai == null || $email == null || $password == null || $konfirmasi_password == null) {
             $this->session->set_flashdata('message', '<div class="form-group"> <div class="alert-danger" role="alert"><center>Data jangan kosong !!</center></div></div>');
             redirect('Beranda/TambahPegawai');
         } else {
-            if (password_verify($password, $konfirmasi_password)) {
+            if ($password==$konfirmasi_password) {
                 $data = array(
                     'id_pegawai' => $id_pegawai,
                     'nama_pegawai' => $nama_pegawai,
                     'email' => $email,
-                    'username' => $username,
+                    // 'username' => $username,
                     'password' => password_hash($password, PASSWORD_DEFAULT),
                     'level' => $level,
                     'is_aktif' => $is_aktif

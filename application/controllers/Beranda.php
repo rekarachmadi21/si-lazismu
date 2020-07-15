@@ -187,6 +187,8 @@ class Beranda extends CI_Controller
     {
         $data['title'] = "Data Pegawai";
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
+        // var_dump($data);
+        // die;
         if ($data['pegawai']['level'] == 1) {
             $this->load->view('Admin/Pegawai/DataPegawai', $data);
         } else {
