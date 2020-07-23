@@ -165,24 +165,6 @@
                             </a>
                         </li>
 
-                        <li class="nav-header">PEGAWAI</li>
-                        <li class="nav-item">
-                            <a href="<?= base_url('') ?>beranda/TambahPegawai" class="nav-link">
-                                <i class="nav-icon fa fa-fw fa-inbox"></i>
-                                <p>
-                                    Tambah Pegawai
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= base_url('') ?>beranda/datapegawai" class="nav-link">
-                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
-                                <p>
-                                    Data Pegawai
-                                </p>
-                            </a>
-                        </li>
-
                         <li class="nav-header">RECORD INPUT DATA</li>
                         <li class="nav-item">
                             <a href="<?= base_url('') ?>beranda/histori" class="nav-link">

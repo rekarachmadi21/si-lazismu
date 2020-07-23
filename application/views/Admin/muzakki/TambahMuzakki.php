@@ -113,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>beranda/kasbesar" class="nav-link active">
+                            <a href="<?= base_url('') ?>beranda/kasbesar" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-money"></i>
                                 <p>
                                     Kas Besar
@@ -149,7 +149,7 @@
 
                         <li class="nav-header">MUZAKKI</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>beranda/tambahmuzakki" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/tambahmuzakki" class="nav-link active">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Muzakki

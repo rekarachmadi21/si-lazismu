@@ -169,8 +169,9 @@ class querylazismu extends CI_Controller
         $id_pegawai = $this->input->post('id_pegawai');
         $nama_pegawai = $this->input->post('nama_pegawai');
         $email = $this->input->post('email');
-        // $username = $this->input->post('username');
+        $alamat = $this->input->post('alamat');
         $password = $this->input->post('password');
+        $tanggal_lahir = $this->input->post('tanggal_lahir');
         $konfirmasi_password = $this->input->post('konfirmasi_password');
         $level  = $this->input->post('level');
         $is_aktif = 1;
@@ -178,12 +179,13 @@ class querylazismu extends CI_Controller
             $this->session->set_flashdata('message', '<div class="form-group"> <div class="alert-danger" role="alert"><center>Data jangan kosong !!</center></div></div>');
             redirect('Beranda/TambahPegawai');
         } else {
-            if ($password==$konfirmasi_password) {
+            if ($password == $konfirmasi_password) {
                 $data = array(
                     'id_pegawai' => $id_pegawai,
                     'nama_pegawai' => $nama_pegawai,
+                    'alamat_lengkap' => $alamat,
                     'email' => $email,
-                    // 'username' => $username,
+                    'tanggal_lahir' => $tanggal_lahir,
                     'password' => password_hash($password, PASSWORD_DEFAULT),
                     'level' => $level,
                     'is_aktif' => $is_aktif
@@ -458,11 +460,13 @@ class querylazismu extends CI_Controller
             $email = $this->input->post('email');
             $nik_pegawai = $this->input->post('nik_pegawai');
             $nama_pegawai = $this->input->post('nama_pegawai');
+            $alamat_lengkap = $this->input->post('alamat_lengkap');
             $tanggal_lahir = $this->input->post('tanggal_lahir');
             $jenis_kelamin = $this->input->post('jenis_kelamin');
             $data = array(
                 'NIK_pegawai' => $nik_pegawai,
                 'nama_pegawai' => $nama_pegawai,
+                'alamat_lengkap' => $alamat_lengkap,
                 'tanggal_lahir' => $tanggal_lahir,
                 'nama_pegawai' => $nama_pegawai,
                 'jenis_kelamin' => $jenis_kelamin
@@ -479,13 +483,15 @@ class querylazismu extends CI_Controller
             if ($this->upload->do_upload('foto_pegawai')) {
                 $id_pegawai = $this->session->userdata('id_pegawai');
                 $email = $this->input->post('email');
+                $alamat_lengkap = $this->input->post('alamat_lengkap');
                 $nik_pegawai = $this->input->post('nik_pegawai');
                 $nama_pegawai = $this->input->post('nama_pegawai');
-                $tanggal_lahir = $this->input->post()('tanggal_lahir');
+                $tanggal_lahir = $this->input->post('tanggal_lahir');
                 $jenis_kelamin = $this->input->post('jenis_kelamin');
                 $foto_pegawai = $this->upload->data('file_name');
                 $data = array(
                     'NIK_pegawai' => $nik_pegawai,
+                    'alamat_lengkap' => $alamat_lengkap,
                     'nama_pegawai' => $nama_pegawai,
                     'tanggal_lahir' => $tanggal_lahir,
                     'nama_pegawai' => $nama_pegawai,

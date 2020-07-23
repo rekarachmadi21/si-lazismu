@@ -87,7 +87,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>beranda/pengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pengeluaran" class="nav-link active">
                                 <i class="nav-icon fa fa-fw fa-laptop"></i>
                                 <p>
                                     Pengeluaran
@@ -113,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>beranda/kasbesar" class="nav-link active">
+                            <a href="<?= base_url('') ?>beranda/kasbesar" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-money"></i>
                                 <p>
                                     Kas Besar

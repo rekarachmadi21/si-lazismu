@@ -114,7 +114,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>beranda/kasbesar" class="nav-link active">
+                            <a href="<?= base_url('') ?>beranda/kasbesar" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-money"></i>
                                 <p>
                                     Kas Besar
@@ -140,7 +140,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>beranda/datarekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datarekening" class="nav-link active">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Rekening

@@ -78,7 +78,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-pencil"></i>
                                 <p>
                                     Pemasukan
@@ -87,7 +87,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-laptop"></i>
                                 <p>
                                     Pengeluaran
@@ -97,7 +97,7 @@
 
                         <li class="nav-header">CEK DATA</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Pemasukan
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapengeluaran" class="nav-link active">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Pengeluaran
@@ -113,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/kasbesar" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/kasbesar" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-money"></i>
                                 <p>
                                     Kas Besar
@@ -121,7 +121,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/kaskecil" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/kaskecil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-book"></i>
                                 <p>
                                     Kas Kecil
@@ -131,7 +131,7 @@
 
                         <li class="nav-header">REKENING</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/tambahrekening" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Rekening
@@ -139,7 +139,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datarekening" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Rekening
@@ -149,7 +149,7 @@
 
                         <li class="nav-header">MUZAKKI</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/tambahmuzakki" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Muzakki
@@ -157,7 +157,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datamuzakki" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Muzakki
@@ -165,27 +165,19 @@
                             </a>
                         </li>
 
-                        <li class="nav-header">PEGAWAI</li>
+                        <li class="nav-header">RECORD INPUT DATA</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link active">
-                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                            <a href="<?= base_url('') ?>beranda/histori" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-user"></i>
                                 <p>
-                                    Tambah Pegawai
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link">
-                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
-                                <p>
-                                    Data Pegawai
+                                    Histori
                                 </p>
                             </a>
                         </li>
 
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/profil" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/profil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-user"></i>
                                 <p>
                                     Profil
@@ -194,7 +186,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>/home/logout" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
                                 <p>
                                     Logout
@@ -229,56 +221,85 @@
                     <div class="card card-default">
                         <!-- /.card-header -->
                         <div class="card-body">
+                            <?= $this->session->flashdata('message') ?>
 
-                            <form action="<?= base_url('') ?>querylazismu/tambah_pemasukan" method="post">
-                                <div class="form-group">
-                                    <label>ID Pegawai</label>
-                                    <?php
-                                    $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+                            <?php $id = $_GET['id']; ?>
+                            <form action="<?= base_url('') ?>querylazismu/edit_pengeluaran" method="post">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>ID Pegawai</label>
+                                            <input type="text" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" disabled>
+                                            <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" value="<?php echo $pegawai['id_pegawai']; ?>" hidden>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID Pengeluaran</label>
+                                            <?php
+                                            $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
 
-                                    $qy = "SELECT * FROM pegawai ORDER BY id_pegawai DESC LIMIT 1";
-                                    $qy2 = mysqli_query($koneksi, $qy);
-                                    $row = mysqli_fetch_assoc($qy2);
-                                    ?>
-                                    <input type="text" class="form-control" value="<?php
-                                                                                    if ($row['id_pegawai'] == NULL) {
-                                                                                        echo 1;
-                                                                                    } else {
-                                                                                        echo $row['id_pegawai'] + 1;
-                                                                                    }
+                                            $qy = "SELECT * FROM pengeluaran ORDER BY id_pengeluaran DESC LIMIT 1";
+                                            $qy2 = mysqli_query($koneksi, $qy);
+                                            $row = mysqli_fetch_assoc($qy2);
+                                            ?>
+                                            <input type="text" class="form-control" value="<?php echo $this->db->query("SELECT id_pengeluaran FROM pengeluaran WHERE id_pengeluaran = $id")->row()->id_pengeluaran ?>" disabled>
+                                            <input type="text" name="id_pengeluaran" id="id_pengeluaran" class="form-control" value="<?php echo $this->db->query("SELECT id_pengeluaran FROM pengeluaran WHERE id_pengeluaran = $id")->row()->id_pengeluaran ?>" hidden>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID Jenis Pengeluaran</label>
+                                            <select class="form-control select2bs4" id="id_jenis_pengeluaran" name="id_jenis_pengeluaran" style="width: 100%;">
+                                                <?php
+                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
+                                                $data = "SELECT * FROM jenis_pengeluaran";
+                                                $query = mysqli_query($koneksi, $data);
 
-                                                                                    ?>" disabled>
-                                    <input type="text" name="id_pegawai" id="id_pegawai" class="form-control" value="<?php if ($row['id_pegawai'] == NULL) {
-                                                                                                                            echo 1;
-                                                                                                                        } else {
-                                                                                                                            echo $row['id_pegawai'] + 1;
-                                                                                                                        } ?>" hidden>
-                                </div>
-                                <div class="form-group">
-                                    <label>Username</label>
-                                    <input type="text" name="username" id="usernamei" class="form-control" placeholder="Masukan Username">
-                                </div>
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input type="text" name="email" id="email" class="form-control" placeholder="Masukan Email">
-                                </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="text" name="password" id="password" class="form-control" placeholder="Masukan Password">
-                                </div>
-                                <div class="form-group">
-                                    <label>Konfirmasi Password</label>
-                                    <input type="text" name="konfirmasi_password" id="konfirmasi_password" class="form-control" placeholder="Masukan Konfimasi Password">
-                                </div>
-                                <div class="form-group">
-                                    <label>Level</label>
-                                    <select name="level" id="level" class="custom-select">
-                                        <option value="1">Admin</option>
-                                        <option value="2">Karyawan</option>
-                                    </select>
-                                </div>
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_pengeluaran'] ?>"><?php echo $key['id_pengeluaran'] . " - " . $key['nama_pengeluaran'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID Rekening</label>
+                                            <select class="form-control select2bs4" id="id_rekening" name="id_rekening" style="width: 100%;">
+                                                <?php
+                                                $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
 
+                                                $data = "SELECT * FROM rekening";
+                                                $query = mysqli_query($koneksi, $data);
+
+                                                foreach ($query as $key) {
+                                                ?>
+                                                    <option value="<?php echo $key['id_rekening'] ?>"><?php echo $key['id_rekening'] . " - " . $key['nama_bank'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tanggal Pengeluaran</label>
+                                            <input type="text" class="form-control" name="tgl_pengeluaran" id="tgl_pengeluaran" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy/mm/dd" placeholder="2020/05/01" value="<?php echo $this->db->query("SELECT tgl_pengeluaran FROM pengeluaran WHERE id_pengeluaran = $id")->row()->tgl_pengeluaran ?>" data-mask>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Jam Pengeluaran</label>
+                                            <input type="text" name="jam_pengeluaran" id="jam_pengeluaran" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputFormat="HH:MM" placeholder="13:10" value="<?php echo $this->db->query("SELECT jam_pengeluaran FROM pengeluaran WHERE id_pengeluaran = $id")->row()->jam_pengeluaran ?>" data-mask>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nominal</label>
+                                            <input type="text" name="nominal" id="nominal" class="form-control" value="<?php echo $this->db->query("SELECT nominal FROM pengeluaran WHERE id_pengeluaran = $id")->row()->nominal ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>keterangan</label>
+                                            <textarea type="text" name="ket" id="ket" rows="4" class="form-control" placeholder="Keterangan..."><?php echo $this->db->query("SELECT ket FROM pengeluaran WHERE id_pengeluaran = $id")->row()->ket ?></textarea>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="input-grup mb-3"></div>
+
                                 <div class="input-grup">
                                     <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                                     <!-- /.col -->
@@ -308,6 +329,7 @@
     <!-- date-range-picker -->
     <script src="<?= base_url('') ?>assets/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- bootstrap color picker -->
+
     <script src="<?= base_url('') ?>assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="<?= base_url('') ?>assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
@@ -318,7 +340,6 @@
     <!-- AdminLTE for demo purposes -->
     <script src="<?= base_url('') ?>assets/dist/js/demo.js"></script>
     <!-- Page script -->
-
     <script>
         $(function() {
             //Initialize Select2 Elements

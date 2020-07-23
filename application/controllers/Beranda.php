@@ -17,8 +17,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/dashboard', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/dashboard', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -36,8 +35,7 @@ class Beranda extends CI_Controller
             }
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pemasukan/Pemasukan', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -50,8 +48,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/Pengeluaran/Pengeluaran', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pengeluaran/Pengeluaran', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -64,8 +61,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/Pemasukan/DataPemasukan', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pemasukan/DataPemasukan', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -79,8 +75,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/Pengeluaran/DataPengeluaran', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pengeluaran/DataPengeluaran', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -93,8 +88,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/Pengeluaran/KasBesar', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pengeluaran/KasBesar', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -107,8 +101,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/Pengeluaran/KasKecil', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Pengeluaran/KasKecil', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -122,8 +115,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/Rekening/Rekening', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Rekening/Rekening', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -135,9 +127,8 @@ class Beranda extends CI_Controller
         if ($data['pegawai']['level'] == 1) {
             $this->load->view('Admin/Rekening/DataRekening', $data);
         } else if ($data['pegawai']['level'] == 2) {
-            $this->load->view('Karyawan/Pengeluaran/DataRekening', $data);
-        }
-        else {
+            $this->load->view('Karyawan/Rekening/DataRekening', $data);
+        } else {
             redirect('auth');
         }
     }
@@ -152,8 +143,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/Muzakki/TambahMuzakki', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Muzakki/TambahMuzakki', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -166,8 +156,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/Muzakki/DataMuzakki', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Muzakki/DataMuzakki', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -214,8 +203,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/Histori/histori', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Histori/histori', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -228,8 +216,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/Profil', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Profil', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -248,6 +235,8 @@ class Beranda extends CI_Controller
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
         if ($data['pegawai']['level'] == 1) {
             $this->load->view('Admin/Pemasukan/EditPemasukan', $data);
+        } else if ($data['pegawai']['level'] == 2) {
+            $this->load->view('Karyawan/Pemasukan/EditPemasukan', $data);
         } else {
             redirect('auth');
         }
@@ -259,6 +248,8 @@ class Beranda extends CI_Controller
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
         if ($data['pegawai']['level'] == 1) {
             $this->load->view('Admin/Pengeluaran/EditPengeluaran', $data);
+        } else if ($data['pegawai']['level'] == 2) {
+            $this->load->view('Karyawan/Pengeluaran/EditPengeluaran', $data);
         } else {
             redirect('auth');
         }
@@ -281,6 +272,8 @@ class Beranda extends CI_Controller
         $data['pegawai'] = $this->db->get_where('pegawai', ['email' => $this->session->userdata('email')])->row_array();
         if ($data['pegawai']['level'] == 1) {
             $this->load->view('Admin/muzakki/editmuzakki', $data);
+        } else if ($data['pegawai']['level'] == 2) {
+            $this->load->view('Karyawan/muzakki/editmuzakki', $data);
         } else {
             redirect('auth');
         }
@@ -294,8 +287,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/Rekening/EditRekening', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/Rekening/EditRekening', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }
@@ -307,8 +299,7 @@ class Beranda extends CI_Controller
             $this->load->view('Admin/edit_profil', $data);
         } else if ($data['pegawai']['level'] == 2) {
             $this->load->view('Karyawan/edit_profil', $data);
-        }
-        else {
+        } else {
             redirect('auth');
         }
     }

@@ -13,7 +13,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url('') ?>assets/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1 /css/ionicons.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css">
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- daterange picker -->
@@ -31,8 +31,7 @@
     <link rel="stylesheet" href="<?= base_url('') ?>assets/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('') ?>assets/dist/css/adminlte.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="<?= base_url('') ?>assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
@@ -79,7 +78,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-pencil"></i>
                                 <p>
                                     Pemasukan
@@ -88,7 +87,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/pengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/pengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-laptop"></i>
                                 <p>
                                     Pengeluaran
@@ -98,7 +97,7 @@
 
                         <li class="nav-header">CEK DATA</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapemasukan" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapemasukan" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Pemasukan
@@ -106,7 +105,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapengeluaran" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datapengeluaran" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Pengeluaran
@@ -114,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/kasbesar" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/kasbesar" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-money"></i>
                                 <p>
                                     Kas Besar
@@ -122,7 +121,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/kaskecil" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/kaskecil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-book"></i>
                                 <p>
                                     Kas Kecil
@@ -132,7 +131,7 @@
 
                         <li class="nav-header">REKENING</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/tambahrekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/tambahrekening" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Rekening
@@ -140,7 +139,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datarekening" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datarekening" class="nav-link active">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Rekening
@@ -150,7 +149,7 @@
 
                         <li class="nav-header">MUZAKKI</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/tambahmuzakki" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/tambahmuzakki" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-inbox"></i>
                                 <p>
                                     Tambah Muzakki
@@ -158,7 +157,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datamuzakki" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/datamuzakki" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
                                 <p>
                                     Data Muzakki
@@ -166,27 +165,19 @@
                             </a>
                         </li>
 
-                        <li class="nav-header">PEGAWAI</li>
+                        <li class="nav-header">RECORD INPUT DATA</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/TambahPegawai" class="nav-link">
-                                <i class="nav-icon fa fa-fw fa-inbox"></i>
+                            <a href="<?= base_url('') ?>beranda/histori" class="nav-link">
+                                <i class="nav-icon fa fa-fw fa-user"></i>
                                 <p>
-                                    Tambah Pegawai
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/datapegawai" class="nav-link active">
-                                <i class="nav-icon fa fa-fw fa-shopping-cart"></i>
-                                <p>
-                                    Data Pegawai
+                                    Histori
                                 </p>
                             </a>
                         </li>
 
                         <li class="nav-header">AKUN</li>
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>home/profil" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/profil" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-user"></i>
                                 <p>
                                     Profil
@@ -195,7 +186,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('') ?>/home/logout" class="nav-link">
+                            <a href="<?= base_url('') ?>beranda/logout" class="nav-link">
                                 <i class="nav-icon fa fa-fw fa-power-off"></i>
                                 <p>
                                     Logout
@@ -225,104 +216,156 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="row">
-                    <div class="col-12">
+                <div class="container-fluid">
+                    <!-- SELECT2 EXAMPLE -->
+                    <div class="card card-default">
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <?= $this->session->flashdata('message');
+                            $id = $_GET['id']; ?>
+                            <?php echo form_open_multipart('querylazismu/edit_rekening') ?>
+                            <form action="<?= base_url('') ?>querylazismu/edit_rekening" method="post">
+                                <div class="form-group">
+                                    <label>ID Rekening</label>
+                                    <?php
+                                    $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
 
-                        <div class="card">
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>ID Pegawai</th>
-                                            <th>Nama Pegawai</th>
-                                            <th>Email</th>
-                                            <th>Username</th>
-                                            <th>Password</th>
-                                            <th>Level/Jabatan</th>
-                                            <th>Aktif</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $koneksi = new mysqli('localhost', 'root', '', 'db_lazismu');
-
-                                        $data = "SELECT * FROM pegawai";
-                                        $query = mysqli_query($koneksi, $data);
-
-                                        foreach ($query as $key) {
-                                        ?>
-                                            <tr>
-                                                <td><?php echo $key['id_pegawai'] ?></td>
-                                                <td><?php echo $key['nama_pegawai'] ?></td>
-                                                <td><?php echo $key['email'] ?></td>
-                                                <td><?php echo $key['username'] ?></td>
-                                                <td><?php echo $key['password'] ?></td>
-                                                <td><?php echo $key['level'] ?></td>
-                                                <td><?php echo $key['is_aktif'] ?></td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <div class="input-grup">
-                                            <a href="<?= base_url('') ?>home/pemasukan_xls">Export to excel</a>
-                                        </div>
-                                    </div>
+                                    $qy = "SELECT * FROM rekening ORDER BY id_rekening DESC LIMIT 1";
+                                    $qy2 = mysqli_query($koneksi, $qy);
+                                    $row = mysqli_fetch_assoc($qy2);
+                                    ?>
+                                    <input type="text" class="form-control" value="<?php echo $this->db->query("SELECT id_rekening FROM rekening WHERE id_rekening = $id")->row()->id_rekening ?>" disabled>
+                                    <input type="text" name="id_rekening" id="id_rekening" class="form-control" value="<?php echo $this->db->query("SELECT id_rekening FROM rekening WHERE id_rekening = $id")->row()->id_rekening ?>" hidden>
                                 </div>
-                            </div>
-                            <!-- /.card-body -->
-                        </div>
-                        <!-- /.card -->
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </section>
-            <!-- /.content -->
-        </div>
+                                <div class="form-group">
+                                    <label>Nama Bank</label>
+                                    <input type="text" name="nama_bank" id="nama_bank" class="form-control" placeholder="Masukan ID transaksi..." value="<?php echo $this->db->query("SELECT nama_bank FROM rekening WHERE id_rekening = $id")->row()->nama_bank ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Nomor Rekening</label>
+                                    <input type="text" name="nomor_rekening" id="nomor_rekening" class="form-control" placeholder="Masukan ID transaksi..." value="<?php echo $this->db->query("SELECT nomor_rekening FROM rekening WHERE id_rekening = $id")->row()->nomor_rekening ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Gambar</label><br>
+                                    <input type="file" class="form-control" id="foto_rekening" name="foto_rekening" value="<?php echo $this->db->query("SELECT foto_rekening FROM rekening WHERE id_rekening = $id")->row()->foto_rekening ?>">
+                                    <br>
+                                </div>
+                                <div class="input-grup mb-3"></div>
+                                <div class="input-grup">
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+                                    <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+                                    <!-- /.col -->
+
+                                </div>
+
+                        </div>
+                        </form>
+                        <?php echo form_close() ?>
+                    </div>
+                </div>
+        </div>
+        </section>
+
+
     </div>
-    <!-- ./wrapper -->
+    </div>
 
     <!-- jQuery -->
     <script src="<?= base_url('') ?>assets/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="<?= base_url('') ?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- DataTables -->
-    <script src="<?= base_url('') ?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url('') ?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="<?= base_url('') ?>assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="<?= base_url('') ?>assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <!-- Select2 -->
+    <script src="<?= base_url('') ?>assets/plugins/select2/js/select2.full.min.js"></script>
+    <!-- Bootstrap4 Duallistbox -->
+    <script src="<?= base_url('') ?>assets/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+    <!-- InputMask -->
+    <script src="<?= base_url('') ?>assets/plugins/moment/moment.min.js"></script>
+    <script src="<?= base_url('') ?>assets/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="<?= base_url('') ?>assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap color picker -->
+    <script src="<?= base_url('') ?>assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="<?= base_url('') ?>assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Bootstrap Switch -->
+    <script src="<?= base_url('') ?>assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url('') ?>assets/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="<?= base_url('') ?>assets/dist/js/demo.js"></script>
-    <!-- page script -->
+    <!-- Page script -->
+
     <script>
         $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "autoWidth": false,
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+
+            //Datemask dd/mm/yyyy
+            $('#datemask').inputmask('dd/mm/yyyy', {
+                'placeholder': 'dd/mm/yyyy'
+            })
+            //Datemask2 mm/dd/yyyy
+            $('#datemask2').inputmask('mm/dd/yyyy', {
+                'placeholder': 'mm/dd/yyyy'
+            })
+            //Money Euro
+            $('[data-mask]').inputmask()
+
+            //Date range picker
+            $('#reservation').daterangepicker()
+            //Date range picker with time picker
+            $('#reservationtime').daterangepicker({
+                timePicker: true,
+                timePickerIncrement: 30,
+                locale: {
+                    format: 'MM/DD/YYYY hh:mm A'
+                }
+            })
+            //Date range as a button
+            $('#daterange-btn').daterangepicker({
+                    ranges: {
+                        'Today': [moment(), moment()],
+                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                        'This Month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                    },
+                    startDate: moment().subtract(29, 'days'),
+                    endDate: moment()
+                },
+                function(start, end) {
+                    $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+                }
+            )
+
+            //Timepicker
+            $('#timepicker').datetimepicker({
+                format: 'LT'
+            })
+
+            //Bootstrap Duallistbox
+            $('.duallistbox').bootstrapDualListbox()
+
+            //Colorpicker
+            $('.my-colorpicker1').colorpicker()
+            //color picker with addon
+            $('.my-colorpicker2').colorpicker()
+
+            $('.my-colorpicker2').on('colorpickerChange', function(event) {
+                $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
             });
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
+
+            $("input[data-bootstrap-switch]").each(function() {
+                $(this).bootstrapSwitch('state', $(this).prop('checked'));
             });
-        });
+
+        })
     </script>
 </body>
 
